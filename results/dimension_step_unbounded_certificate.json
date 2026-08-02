@@ -1,0 +1,1327 @@
+{
+  "body_encoding": "UTF-8 compact JSON with sorted keys, excluding body_sha256",
+  "body_sha256": "dbd2b3ca8d482f488d12ce45ec60993bf0f42db2b9f5837634fd181e583bd285",
+  "classification": "all-parameter proof on the unbounded center strip",
+  "compact_endpoint_falsifier": {
+    "Q_5": "583/625",
+    "Q_6": "221/243",
+    "matches_frozen_values": true,
+    "strict_dip": true
+  },
+  "dispositions": [
+    "DIMENSION_STEP_PROVED_ON_X_GE_THREE_HALVES"
+  ],
+  "finite_pq_scan_used": false,
+  "frozen_state_bridge": {
+    "annular_identity": "Xi_(p,q)(x)=2*(sum_I epsilon_n(Q_n)-sum_J epsilon_n(Q_n))",
+    "cap_sums_equal": true,
+    "constant_state_comparator": {
+      "delta_block": "D_p(q)=1/2*[Phi((p+1)q)-Phi(pq)], Phi(x)=log Gamma(x+alpha)-log Gamma(x+beta)",
+      "direction": "k_r strictly decreasing implies the scaled digamma gap is strictly increasing in x, hence D_p(q) strictly increases and the equal-cap defect block B_p(q) strictly decreases",
+      "passed": true,
+      "scaled_digamma_integral": "x[psi(x+alpha)-psi(x+beta)]=integral_0^infinity exp(-u) k_r(u/x) du",
+      "strict_inequality": "sum_I epsilon_n(r) > sum_J epsilon_n(r)"
+    },
+    "constant_state_comparator_source": "annular reduction in the manuscript",
+    "epsilon_decreases_in_frozen_state": true,
+    "epsilon_denominator_factors": {
+      "two_n_plus_one": {
+        "canonical_terms": [
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "coefficient_sum": 5,
+        "degrees": [
+          1
+        ],
+        "maximum": 3,
+        "minimum": 2,
+        "payload_encoding": "compact JSON rows [powers...,coefficient] in Poly.terms order",
+        "payload_sha256": "7b21510cab9fb740aca27816c49447e7fe23ab3c938a31ca26cd2f6634c65537",
+        "strictly_positive": true,
+        "term_count": 2,
+        "variables": [
+          "s"
+        ]
+      },
+      "two_n_plus_one_minus_r": {
+        "canonical_terms": [
+          [
+            1,
+            0,
+            2
+          ],
+          [
+            0,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            2
+          ]
+        ],
+        "coefficient_sum": 5,
+        "degrees": [
+          1,
+          1
+        ],
+        "maximum": 2,
+        "minimum": 1,
+        "payload_encoding": "compact JSON rows [powers...,coefficient] in Poly.terms order",
+        "payload_sha256": "dd056df80ae905661041447b468efd7167b6c581d0dd08c9722f8f34025d98ed",
+        "strictly_positive": true,
+        "term_count": 3,
+        "variables": [
+          "s",
+          "h"
+        ]
+      },
+      "two_n_plus_one_plus_r": {
+        "canonical_terms": [
+          [
+            1,
+            0,
+            2
+          ],
+          [
+            0,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            3
+          ]
+        ],
+        "coefficient_sum": 6,
+        "degrees": [
+          1,
+          1
+        ],
+        "maximum": 3,
+        "minimum": 1,
+        "payload_encoding": "compact JSON rows [powers...,coefficient] in Poly.terms order",
+        "payload_sha256": "621fcb8efbacd353b370e01c943c2c90ce49e6956582fb7eca158e3dd204d74d",
+        "strictly_positive": true,
+        "term_count": 3,
+        "variables": [
+          "s",
+          "v"
+        ]
+      }
+    },
+    "epsilon_derivative": "(2*n + 1)/((-2*n + r - 1)*(2*n + r + 1))",
+    "epsilon_derivative_identity": true,
+    "equal_product": true,
+    "frozen_r_choice": "r*=(Q_((p+1)q-1)+Q_(p(q+1)))/2",
+    "frozen_r_domain_reason": "AQ9 and the separated blocks give 0<Q_low<Q_high<1, so Q_low<r*<Q_high and 0<r*<1",
+    "frozen_r_identities": {
+      "above_low_by_half_gap": true,
+      "below_high_by_half_gap": true
+    },
+    "frozen_r_symbolic": "q_high/2 + q_low/2",
+    "full_sandwich_gate": true,
+    "h_derivative_identity": true,
+    "half_log_tangent_identity": true,
+    "high_cap_telescoping_ratio": "(p + 1)/p",
+    "high_length": "q + 1",
+    "kernel_log_derivative_identity": true,
+    "kernel_monotonicity_reason": "H(x)=x*coth(x) has derivative numerator sinh(2x)-2x; that excess starts at zero and has derivative 4*sinh(x)^2>0",
+    "kernel_strictly_decreases_for_zero_lt_r_lt_one": true,
+    "kernel_transform_identities": {
+      "alpha_minus_beta": true,
+      "alpha_plus_beta": true,
+      "exponential_numerator": true,
+      "hyperbolic_denominator": true,
+      "hyperbolic_numerator": true
+    },
+    "lengths_and_separation": true,
+    "low_cap_telescoping_ratio": "(p + 1)/p",
+    "low_length": "q",
+    "orientation_by_symmetry": {
+      "assumption": "p>=q without loss of generality",
+      "corner_identities": {
+        "a_fixed": true,
+        "b_fixed": true,
+        "c_maps_to_d": true,
+        "d_maps_to_c": true
+      },
+      "passed": true
+    },
+    "sandwich_direction": "sum_I epsilon_n(Q_n) >= sum_I epsilon_n(r*) > sum_J epsilon_n(r*) >= sum_J epsilon_n(Q_n)",
+    "separation": "p - q + 1",
+    "sinh_excess_derivative_identity": true,
+    "unequal_length_factorwise_route_used": false
+  },
+  "mutation_controls": {
+    "base_sign_mutation_count": 10,
+    "base_sign_mutations_rejected": 10,
+    "derivative_sign_mutation_count": 5,
+    "derivative_sign_mutations_rejected": 5,
+    "protocol": "Negate each of the five AQ3 coefficient expressions in turn; negate each of the ten shifted base coefficients in turn; negate K's minimum coefficient at the named monomial and require both positivity and canonical-payload gates to reject it.",
+    "resultant_mutated_coefficient": -64,
+    "resultant_mutated_monomial": [
+      8,
+      2
+    ],
+    "resultant_sign_mutation_rejected": true
+  },
+  "parity_induction": {
+    "conclusion": "Q_(n+1)>Q_n for every n>=1,c>=5",
+    "even_base": "z_2>r_2 because F_2(z_2)>0",
+    "odd_base": "z_1>r_1 because F_1(z_1)>0",
+    "passed": true,
+    "step": "z_(n+2)=G_n(z_n)>G_n(r_n)>r_(n+2), so F_(n+2)(z_(n+2))>0"
+  },
+  "parity_induction_bases": {
+    "F_1_coefficients_match": true,
+    "F_1_identity": true,
+    "F_1_shifted_coefficients": [
+      8412,
+      1261,
+      62,
+      1
+    ],
+    "F_1_strictly_positive": true,
+    "F_2_coefficients_match": true,
+    "F_2_identity": true,
+    "F_2_shifted_coefficients": [
+      3843234,
+      876285,
+      84024,
+      4130,
+      102,
+      1
+    ],
+    "F_2_strictly_positive": true,
+    "z_1": "1/c",
+    "z_2": "2*c/(c**2 + 2)"
+  },
+  "passed": true,
+  "producer_sha256": "36186c45443e286b45659208b8118759fb43915bd6625fecd8528305b40f6bb7",
+  "root_propagation": {
+    "cleared_polynomial": "2*c**10 + 8*c**9*n*z + 8*c**9*z + 12*c**8*n**2*z**2 + 24*c**8*n*z**2 - 20*c**8*n + 12*c**8*z**2 - 46*c**8 + 2*c**7*n**5*z + 17*c**7*n**4*z + 8*c**7*n**3*z**3 + 48*c**7*n**3*z + 24*c**7*n**2*z**3 - 23*c**7*n**2*z + 24*c**7*n*z**3 - 236*c**7*n*z + 8*c**7*z**3 - 180*c**7*z + 6*c**6*n**6*z**2 - 2*c**6*n**6 + 57*c**6*n**5*z**2 - 17*c**6*n**5 + 2*c**6*n**4*z**4 + 195*c**6*n**4*z**2 - 42*c**6*n**4 + 8*c**6*n**3*z**4 + 195*c**6*n**3*z**2 + 11*c**6*n**3 + 12*c**6*n**2*z**4 - 261*c**6*n**2*z**2 + 242*c**6*n**2 + 8*c**6*n*z**4 - 576*c**6*n*z**2 + 492*c**6*n + 2*c**6*z**4 - 264*c**6*z**2 + 360*c**6 + 6*c**5*n**7*z**3 + 6*c**5*n**7*z + 63*c**5*n**6*z**3 + 109*c**5*n**6*z + 252*c**5*n**5*z**3 + 810*c**5*n**5*z + 430*c**5*n**4*z**3 + 3208*c**5*n**4*z + 146*c**5*n**3*z**3 + 7476*c**5*n**3*z - 441*c**5*n**2*z**3 + 10471*c**5*n**2*z - 524*c**5*n*z**3 + 8196*c**5*n*z - 172*c**5*z**3 + 2700*c**5*z + 2*c**4*n**8*z**4 + 24*c**4*n**8*z**2 - 10*c**4*n**8 + 23*c**4*n**7*z**4 + 396*c**4*n**7*z**2 - 151*c**4*n**7 + 105*c**4*n**6*z**4 + 2835*c**4*n**6*z**2 - 974*c**4*n**6 + 234*c**4*n**5*z**4 + 11484*c**4*n**5*z**2 - 3462*c**4*n**5 + 234*c**4*n**4*z**4 + 28818*c**4*n**4*z**2 - 7202*c**4*n**4 + 3*c**4*n**3*z**4 + 45900*c**4*n**3*z**2 - 8375*c**4*n**3 - 203*c**4*n**2*z**4 + 45183*c**4*n**2*z**2 - 4190*c**4*n**2 - 164*c**4*n*z**4 + 24948*c**4*n*z**2 + 636*c**4*n - 42*c**4*z**4 + 5868*c**4*z**2 + 1048*c**4 + 22*c**3*n**9*z**3 - 4*c**3*n**9*z + 385*c**3*n**8*z**3 - 34*c**3*n**8*z + 2964*c**3*n**7*z**3 + 72*c**3*n**7*z + 13155*c**3*n**6*z**3 + 2128*c**3*n**6*z + 37026*c**3*n**5*z**3 + 12316*c**3*n**5*z + 68379*c**3*n**4*z**3 + 37442*c**3*n**4*z + 82616*c**3*n**3*z**3 + 67640*c**3*n**3*z + 62765*c**3*n**2*z**3 + 72744*c**3*n**2*z + 27132*c**3*n*z**3 + 42880*c**3*n*z + 5076*c**3*z**3 + 10624*c**3*z + 6*c**2*n**10*z**4 + 18*c**2*n**10*z**2 - 12*c**2*n**10 + 115*c**2*n**9*z**4 + 387*c**2*n**9*z**2 - 242*c**2*n**9 + 975*c**2*n**8*z**4 + 3714*c**2*n**8*z**2 - 2176*c**2*n**8 + 4807*c**2*n**7*z**4 + 20907*c**2*n**7*z**2 - 11456*c**2*n**7 + 15235*c**2*n**6*z**4 + 76284*c**2*n**6*z**2 - 38980*c**2*n**6 + 32377*c**2*n**5*z**4 + 188073*c**2*n**5*z**2 - 89262*c**2*n**5 + 46657*c**2*n**4*z**4 + 316494*c**2*n**4*z**2 - 138840*c**2*n**4 + 44973*c**2*n**3*z**4 + 358029*c**2*n**3*z**2 - 144376*c**2*n**3 + 27739*c**2*n**2*z**4 + 259914*c**2*n**2*z**2 - 95792*c**2*n**2 + 9888*c**2*n*z**4 + 109116*c**2*n*z**2 - 36544*c**2*n + 1548*c**2*z**4 + 20088*c**2*z**2 - 6080*c**2 + 14*c*n**11*z**3 - 10*c*n**11*z + 311*c*n**10*z**3 - 215*c*n**10*z + 3098*c*n**9*z**3 - 2064*c*n**9*z + 18245*c*n**8*z**3 - 11653*c*n**8*z + 70500*c*n**7*z**3 - 42890*c*n**7*z + 187461*c*n**6*z**3 - 107793*c*n**6*z + 349642*c*n**5*z**3 - 188300*c*n**5*z + 457003*c*n**4*z**3 - 228091*c*n**4*z + 409906*c*n**3*z**3 - 187344*c*n**3*z + 240148*c*n**2*z**3 - 99176*c*n**2*z + 82680*c*n*z**3 - 30400*c*n*z + 12672*c*z**3 - 4080*c*z + 2*n**12*z**4 - 2*n**12 + 47*n**11*z**4 + 4*n**11*z**2 - 51*n**11 + 499*n**10*z**4 + 85*n**10*z**2 - 584*n**10 + 3163*n**9*z**4 + 806*n**9*z**2 - 3969*n**9 + 13323*n**8*z**4 + 4499*n**8*z**2 - 17822*n**8 + 39261*n**7*z**4 + 16416*n**7*z**2 - 55677*n**7 + 82945*n**6*z**4 + 41091*n**6*z**2 - 124036*n**6 + 126505*n**5*z**4 + 71966*n**5*z**2 - 198471*n**5 + 138167*n**4*z**4 + 88157*n**4*z**2 - 226324*n**4 + 105344*n**3*z**4 + 74008*n**3*z**2 - 179352*n**3 + 53208*n**2*z**4 + 40552*n**2*z**2 - 93760*n**2 + 15984*n*z**4 + 13056*n*z**2 - 29040*n + 2160*z**4 + 1872*z**2 - 4032",
+    "cleared_polynomial_degree": 4,
+    "cleared_polynomial_denominator": "1/1",
+    "epsilon_brackets": {
+      "identities": true,
+      "lower_limit": "-e*(2*n + 1)",
+      "root_limit_conclusion": "c*r_n(c) -> n-2/(2*n+1)",
+      "upper_limit": "e*(2*n + 1)"
+    },
+    "large_center_orientation": true,
+    "next_threshold_scaled_limit": "(2*n**2 + 9*n + 8)/(2*n + 5)",
+    "no_root_crossing_reason": "The simple roots depend continuously on c; a meeting G_n(r_n)=r_(n+2) would zero the reconstructed resultant, whose remaining factor is strictly positive on c>=5,n>=1.",
+    "orientation_gap": "2/(2*n + 5)",
+    "resultant_factorization_identity": true,
+    "resultant_matches_frozen_payload": true,
+    "resultant_quotient_denominator": "1/1",
+    "resultant_record": {
+      "canonical_terms": [
+        [
+          8,
+          2,
+          64
+        ],
+        [
+          8,
+          1,
+          384
+        ],
+        [
+          8,
+          0,
+          560
+        ],
+        [
+          7,
+          8,
+          128
+        ],
+        [
+          7,
+          7,
+          3328
+        ],
+        [
+          7,
+          6,
+          37824
+        ],
+        [
+          7,
+          5,
+          245248
+        ],
+        [
+          7,
+          4,
+          989864
+        ],
+        [
+          7,
+          3,
+          2537008
+        ],
+        [
+          7,
+          2,
+          4024024
+        ],
+        [
+          7,
+          1,
+          3629040
+        ],
+        [
+          7,
+          0,
+          1448212
+        ],
+        [
+          6,
+          14,
+          64
+        ],
+        [
+          6,
+          13,
+          2944
+        ],
+        [
+          6,
+          12,
+          62608
+        ],
+        [
+          6,
+          11,
+          815744
+        ],
+        [
+          6,
+          10,
+          7272076
+        ],
+        [
+          6,
+          9,
+          46889496
+        ],
+        [
+          6,
+          8,
+          225316203
+        ],
+        [
+          6,
+          7,
+          818939764
+        ],
+        [
+          6,
+          6,
+          2260822830
+        ],
+        [
+          6,
+          5,
+          4717346380
+        ],
+        [
+          6,
+          4,
+          7332417087
+        ],
+        [
+          6,
+          3,
+          8260628984
+        ],
+        [
+          6,
+          2,
+          6416419788
+        ],
+        [
+          6,
+          1,
+          3106041264
+        ],
+        [
+          6,
+          0,
+          717132428
+        ],
+        [
+          5,
+          16,
+          256
+        ],
+        [
+          5,
+          15,
+          13824
+        ],
+        [
+          5,
+          14,
+          358336
+        ],
+        [
+          5,
+          13,
+          5896064
+        ],
+        [
+          5,
+          12,
+          68592736
+        ],
+        [
+          5,
+          11,
+          595255328
+        ],
+        [
+          5,
+          10,
+          3967435980
+        ],
+        [
+          5,
+          9,
+          20632916504
+        ],
+        [
+          5,
+          8,
+          84324530303
+        ],
+        [
+          5,
+          7,
+          270951259620
+        ],
+        [
+          5,
+          6,
+          680616834054
+        ],
+        [
+          5,
+          5,
+          1320031571532
+        ],
+        [
+          5,
+          4,
+          1935246490375
+        ],
+        [
+          5,
+          3,
+          2072078567328
+        ],
+        [
+          5,
+          2,
+          1528664366672
+        ],
+        [
+          5,
+          1,
+          695396147376
+        ],
+        [
+          5,
+          0,
+          147445717612
+        ],
+        [
+          4,
+          18,
+          256
+        ],
+        [
+          4,
+          17,
+          16384
+        ],
+        [
+          4,
+          16,
+          516928
+        ],
+        [
+          4,
+          15,
+          10569856
+        ],
+        [
+          4,
+          14,
+          155625968
+        ],
+        [
+          4,
+          13,
+          1740540480
+        ],
+        [
+          4,
+          12,
+          15242699788
+        ],
+        [
+          4,
+          11,
+          106390779048
+        ],
+        [
+          4,
+          10,
+          597608670912
+        ],
+        [
+          4,
+          9,
+          2712169199352
+        ],
+        [
+          4,
+          8,
+          9937941309352
+        ],
+        [
+          4,
+          7,
+          29251765996408
+        ],
+        [
+          4,
+          6,
+          68489232358352
+        ],
+        [
+          4,
+          5,
+          125571516960328
+        ],
+        [
+          4,
+          4,
+          176019464756568
+        ],
+        [
+          4,
+          3,
+          181784856641288
+        ],
+        [
+          4,
+          2,
+          130148500232924
+        ],
+        [
+          4,
+          1,
+          57632654897904
+        ],
+        [
+          4,
+          0,
+          11886805656404
+        ],
+        [
+          3,
+          19,
+          1024
+        ],
+        [
+          3,
+          18,
+          83200
+        ],
+        [
+          3,
+          17,
+          3133440
+        ],
+        [
+          3,
+          16,
+          73709952
+        ],
+        [
+          3,
+          15,
+          1221804096
+        ],
+        [
+          3,
+          14,
+          15207435088
+        ],
+        [
+          3,
+          13,
+          147578599648
+        ],
+        [
+          3,
+          12,
+          1142882113152
+        ],
+        [
+          3,
+          11,
+          7163587647104
+        ],
+        [
+          3,
+          10,
+          36622706382188
+        ],
+        [
+          3,
+          9,
+          153112685270216
+        ],
+        [
+          3,
+          8,
+          522592113339416
+        ],
+        [
+          3,
+          7,
+          1447444893795040
+        ],
+        [
+          3,
+          6,
+          3218672844761788
+        ],
+        [
+          3,
+          5,
+          5651646409333960
+        ],
+        [
+          3,
+          4,
+          7643360993600080
+        ],
+        [
+          3,
+          3,
+          7664517637111984
+        ],
+        [
+          3,
+          2,
+          5355944858957856
+        ],
+        [
+          3,
+          1,
+          2323982012320224
+        ],
+        [
+          3,
+          0,
+          470771304510544
+        ],
+        [
+          2,
+          20,
+          1024
+        ],
+        [
+          2,
+          19,
+          133120
+        ],
+        [
+          2,
+          18,
+          6720000
+        ],
+        [
+          2,
+          17,
+          196204800
+        ],
+        [
+          2,
+          16,
+          3873023680
+        ],
+        [
+          2,
+          15,
+          56028202304
+        ],
+        [
+          2,
+          14,
+          622893512160
+        ],
+        [
+          2,
+          13,
+          5483603676160
+        ],
+        [
+          2,
+          12,
+          38968021302784
+        ],
+        [
+          2,
+          11,
+          226216157245232
+        ],
+        [
+          2,
+          10,
+          1079745485265808
+        ],
+        [
+          2,
+          9,
+          4245726032332256
+        ],
+        [
+          2,
+          8,
+          13723986159791264
+        ],
+        [
+          2,
+          7,
+          36237912174573424
+        ],
+        [
+          2,
+          6,
+          77306046871225520
+        ],
+        [
+          2,
+          5,
+          130997940530546304
+        ],
+        [
+          2,
+          4,
+          171916191057858304
+        ],
+        [
+          2,
+          3,
+          168120869159732736
+        ],
+        [
+          2,
+          2,
+          115070458717441312
+        ],
+        [
+          2,
+          1,
+          49081046295612768
+        ],
+        [
+          2,
+          0,
+          9799968669199040
+        ],
+        [
+          1,
+          20,
+          34816
+        ],
+        [
+          1,
+          19,
+          3552256
+        ],
+        [
+          1,
+          18,
+          155489280
+        ],
+        [
+          1,
+          17,
+          4085835008
+        ],
+        [
+          1,
+          16,
+          73956912704
+        ],
+        [
+          1,
+          15,
+          992113426176
+        ],
+        [
+          1,
+          14,
+          10306783421120
+        ],
+        [
+          1,
+          13,
+          85283160008064
+        ],
+        [
+          1,
+          12,
+          572410563909120
+        ],
+        [
+          1,
+          11,
+          3152339092756032
+        ],
+        [
+          1,
+          10,
+          14334060503018048
+        ],
+        [
+          1,
+          9,
+          53921283113314944
+        ],
+        [
+          1,
+          8,
+          167455020954238400
+        ],
+        [
+          1,
+          7,
+          426649654337495168
+        ],
+        [
+          1,
+          6,
+          882074665109839104
+        ],
+        [
+          1,
+          5,
+          1454824805783559360
+        ],
+        [
+          1,
+          4,
+          1866034457099815360
+        ],
+        [
+          1,
+          3,
+          1790459173230718336
+        ],
+        [
+          1,
+          2,
+          1206592065561709504
+        ],
+        [
+          1,
+          1,
+          508232944538131200
+        ],
+        [
+          1,
+          0,
+          100454020846816000
+        ],
+        [
+          0,
+          20,
+          230400
+        ],
+        [
+          0,
+          19,
+          21606400
+        ],
+        [
+          0,
+          18,
+          887215616
+        ],
+        [
+          0,
+          17,
+          22076789760
+        ],
+        [
+          0,
+          16,
+          380542194624
+        ],
+        [
+          0,
+          15,
+          4881389534848
+        ],
+        [
+          0,
+          14,
+          48660686403392
+        ],
+        [
+          0,
+          13,
+          387612575124992
+        ],
+        [
+          0,
+          12,
+          2512457603831040
+        ],
+        [
+          0,
+          11,
+          13405033132149248
+        ],
+        [
+          0,
+          10,
+          59246965662730816
+        ],
+        [
+          0,
+          9,
+          217358044583051264
+        ],
+        [
+          0,
+          8,
+          660577839054881792
+        ],
+        [
+          0,
+          7,
+          1652790517750865920
+        ],
+        [
+          0,
+          6,
+          3367220038736067648
+        ],
+        [
+          0,
+          5,
+          5490903636727309056
+        ],
+        [
+          0,
+          4,
+          6985028140230144064
+        ],
+        [
+          0,
+          3,
+          6665479555197269120
+        ],
+        [
+          0,
+          2,
+          4477792767018720000
+        ],
+        [
+          0,
+          1,
+          1883678058002880000
+        ],
+        [
+          0,
+          0,
+          372324389696000000
+        ]
+      ],
+      "coefficient_sum": 41136763893522915744,
+      "degrees": [
+        8,
+        20
+      ],
+      "maximum": 6985028140230144064,
+      "minimum": 64,
+      "payload_encoding": "compact JSON rows [powers...,coefficient] in Poly.terms order",
+      "payload_sha256": "94356f13c8d749d43fd85feb835f8ddb3d0356a95a014009a76e6daaab6cc3f0",
+      "strictly_positive": true,
+      "term_count": 146,
+      "value_at_c5_n1": 372324389696000000,
+      "variables": [
+        "u",
+        "s"
+      ]
+    },
+    "scaled_root_limit_gate": true,
+    "scaled_threshold_exact_degree_in_inverse_center": 6,
+    "scaled_threshold_polynomial": "-2*n**2 + 2*n*y - n + y + 2",
+    "scaled_threshold_root": "(2*n**2 + n - 2)/(2*n + 1)",
+    "strict_root_order_all_centers": true,
+    "two_step_denominator": {
+      "canonical_terms": [
+        [
+          2,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          0,
+          0,
+          10
+        ],
+        [
+          0,
+          2,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          5
+        ],
+        [
+          0,
+          1,
+          0,
+          5
+        ],
+        [
+          0,
+          0,
+          1,
+          10
+        ],
+        [
+          0,
+          0,
+          0,
+          31
+        ]
+      ],
+      "coefficient_sum": 66,
+      "degrees": [
+        2,
+        2,
+        1
+      ],
+      "maximum": 31,
+      "minimum": 1,
+      "payload_encoding": "compact JSON rows [powers...,coefficient] in Poly.terms order",
+      "payload_sha256": "48b25006ffa72487d4948a48cc57a55d9c55c7c368242b956be47b6a4f1ab605",
+      "strictly_positive": true,
+      "term_count": 9,
+      "variables": [
+        "h",
+        "s",
+        "v"
+      ]
+    },
+    "two_step_derivative_identity": true,
+    "two_step_identity": true,
+    "two_step_scaled_error": "-w**2*(n + 1)*(n + 2)**2/(n**2*w**2 + n*w**2*y + 3*n*w**2 + w**2*y + 2*w**2 + 1)",
+    "two_step_scaled_exact": "(n + 2)*(n*w**2*y + w**2*y + 1)/(n**2*w**2 + n*w**2*y + 3*n*w**2 + w**2*y + 2*w**2 + 1)",
+    "two_step_scaled_generic_limit": "n + 2",
+    "two_step_strictly_increasing": true
+  },
+  "scalar_adjacent_difference": {
+    "derivative_coefficients": [
+      "c**4*(2*n + 1) + c**2*(2*n**3 + 7*n**2 + 8*n + 3) + 4*n**5 + 26*n**4 + 66*n**3 + 82*n**2 + 50*n + 12",
+      "c*(n + 1)*(10*c**2*n + 5*c**2 + 2*n**3 + 7*n**2 + 8*n + 3)",
+      "9*c**2*(n + 1)**2*(2*n + 1)",
+      "7*c*(n + 1)**3*(2*n + 1)",
+      "2*(n + 1)**4*(2*n + 1)"
+    ],
+    "domain": {
+      "adjacent_denominator_positive": true,
+      "center_factor": {
+        "canonical_terms": [
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            5
+          ]
+        ],
+        "coefficient_sum": 6,
+        "degrees": [
+          1
+        ],
+        "maximum": 5,
+        "minimum": 1,
+        "payload_encoding": "compact JSON rows [powers...,coefficient] in Poly.terms order",
+        "payload_sha256": "3f271d9b9d8536d9b0abd46f010a878420f668f5fa750f2659dfcc1ab3b82551",
+        "strictly_positive": true,
+        "term_count": 2,
+        "variables": [
+          "h"
+        ]
+      },
+      "derivative_denominator_positive": true,
+      "domain": "c>=5, n>=1, 0<=z<=1",
+      "negative_at_zero": {
+        "canonical_terms": [
+          [
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            5
+          ],
+          [
+            2,
+            0,
+            1
+          ],
+          [
+            1,
+            2,
+            20
+          ],
+          [
+            1,
+            1,
+            50
+          ],
+          [
+            1,
+            0,
+            10
+          ],
+          [
+            0,
+            4,
+            2
+          ],
+          [
+            0,
+            3,
+            19
+          ],
+          [
+            0,
+            2,
+            117
+          ],
+          [
+            0,
+            1,
+            229
+          ],
+          [
+            0,
+            0,
+            85
+          ]
+        ],
+        "coefficient_sum": 540,
+        "degrees": [
+          2,
+          4
+        ],
+        "maximum": 229,
+        "minimum": 1,
+        "payload_encoding": "compact JSON rows [powers...,coefficient] in Poly.terms order",
+        "payload_sha256": "7f4e9c0ca967a96f2177949a8bf882a932fc8636d782545e2ea8238555b0d5fb",
+        "strictly_positive": true,
+        "term_count": 11,
+        "variables": [
+          "h",
+          "s"
+        ]
+      },
+      "positive_at_one": {
+        "canonical_terms": [
+          [
+            3,
+            1,
+            2
+          ],
+          [
+            3,
+            0,
+            3
+          ],
+          [
+            2,
+            2,
+            4
+          ],
+          [
+            2,
+            1,
+            46
+          ],
+          [
+            2,
+            0,
+            62
+          ],
+          [
+            1,
+            3,
+            4
+          ],
+          [
+            1,
+            2,
+            68
+          ],
+          [
+            1,
+            1,
+            376
+          ],
+          [
+            1,
+            0,
+            447
+          ],
+          [
+            0,
+            3,
+            20
+          ],
+          [
+            0,
+            2,
+            240
+          ],
+          [
+            0,
+            1,
+            980
+          ],
+          [
+            0,
+            0,
+            1060
+          ]
+        ],
+        "coefficient_sum": 3312,
+        "degrees": [
+          3,
+          3
+        ],
+        "maximum": 1060,
+        "minimum": 2,
+        "payload_encoding": "compact JSON rows [powers...,coefficient] in Poly.terms order",
+        "payload_sha256": "234edd4e1990e249dda6937b553f68cb892f4f4f91d7886aca5f29fc7294843d",
+        "strictly_positive": true,
+        "term_count": 13,
+        "variables": [
+          "h",
+          "s"
+        ]
+      },
+      "sign_reason": "c>0 and c+(n+1)z>0 make both denominators positive; F is strictly increasing, with P(0)<0<P(1)",
+      "state_denominator_factor": {
+        "canonical_terms": [
+          [
+            1,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            0,
+            0,
+            5
+          ]
+        ],
+        "coefficient_sum": 9,
+        "degrees": [
+          1,
+          1,
+          1
+        ],
+        "maximum": 5,
+        "minimum": 1,
+        "payload_encoding": "compact JSON rows [powers...,coefficient] in Poly.terms order",
+        "payload_sha256": "bd455d1a9399a77766023226cad20845771681464b47d6450ce5312dddd83714",
+        "strictly_positive": true,
+        "term_count": 4,
+        "variables": [
+          "h",
+          "s",
+          "v"
+        ]
+      },
+      "unique_simple_root_in_open_unit_interval": true
+    },
+    "identities": {
+      "AQ1_from_riccati_tanh_increment": true,
+      "adjacent_denominator": true,
+      "derivative_coefficients_positive": true,
+      "derivative_denominator": true,
+      "derivative_numerator": true,
+      "threshold_at_one": true,
+      "threshold_at_zero": true
+    },
+    "quartic_degree": 4,
+    "threshold_polynomial": "2*c**3*n*z + c**3*z + 6*c**2*n**2*z**2 - 2*c**2*n**2 + 9*c**2*n*z**2 - c**2*n + 3*c**2*z**2 + 2*c**2 + 6*c*n**3*z**3 - 2*c*n**3*z + 15*c*n**2*z**3 + c*n**2*z + 12*c*n*z**3 + 10*c*n*z + 3*c*z**3 + 7*c*z + 2*n**4*z**4 - 2*n**4 + 7*n**3*z**4 + 4*n**3*z**2 - 11*n**3 + 9*n**2*z**4 + 13*n**2*z**2 - 22*n**2 + 5*n*z**4 + 14*n*z**2 - 19*n + z**4 + 5*z**2 - 6"
+  },
+  "schema": "dimension-step-unbounded-v1",
+  "scope_boundary": "The universal dimension-step theorem does not by itself prove the equal-product theorem on the noninteger base strip.",
+  "source_status": {
+    "files": {},
+    "passed": true
+  },
+  "worker_contract": "one serial worker; exact SymPy rational and integer arithmetic"
+}

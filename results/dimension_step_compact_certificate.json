@@ -1,0 +1,221 @@
+{
+  "classification": "all-parameter proof on two compact center strips",
+  "controls": {
+    "one_factor_lower": "3146/3051",
+    "one_factor_ratio_minus_one": "-18113657/8184328857",
+    "one_factor_upper": "29507577/28553200",
+    "pair_ratio_minus_one": "1/113"
+  },
+  "dispositions": [
+    "DIMENSION_STEP_PROVED_ON_X_IN_HALF_TO_ONE",
+    "DIMENSION_STEP_PROVED_ON_X_IN_ONE_TO_THREE_HALVES"
+  ],
+  "identities": {
+    "endpoint_ratio_C4": true,
+    "endpoint_ratio_C5_even": true,
+    "endpoint_ratio_C5_odd": true,
+    "lower_pair": true,
+    "lower_single": true,
+    "orbit_even_to_odd": true,
+    "orbit_odd_to_even": true,
+    "trap_residual": true,
+    "upper_pair": true,
+    "upper_single_derivative": true,
+    "upper_single_factorization": true,
+    "upper_single_maximum_value": true
+  },
+  "passed": true,
+  "producer_sha256": "65eb8feddff3cbaddb180e82073ee2e3e75ece68d5856a68a84b43c442cd2043",
+  "schema": "dimension-step-compact-v1",
+  "source_status": {
+    "files": {},
+    "passed": true
+  },
+  "strip_3_4": {
+    "center_derivatives": {
+      "lower_pair": {
+        "basis_count": 9,
+        "entry_count": 81,
+        "maximum": "2367072/1",
+        "minimum": "96/1",
+        "nonnegative": true,
+        "sha256": "c63aae182ab6a9fb1b18b58bcc1bd5dd3cb823b8fd54ff87f290fdd172e54e8b",
+        "strictly_positive": true,
+        "zero_count": 0
+      },
+      "lower_single": {
+        "basis_count": 7,
+        "entry_count": 55,
+        "maximum": "52736/1",
+        "minimum": "32/3",
+        "nonnegative": true,
+        "sha256": "611414123198f88e23aca92e90706f5b7e2f08e80af1b987894e865062c7b90d",
+        "strictly_positive": true,
+        "zero_count": 0
+      },
+      "upper_pair": {
+        "basis_count": 5,
+        "entry_count": 35,
+        "maximum": "88128/1",
+        "minimum": "64/1",
+        "nonnegative": true,
+        "sha256": "87e22ff74a4eff0466f90877ada9c3df5cd7feffcb8afb77211098ad42d0a1f9",
+        "strictly_positive": true,
+        "zero_count": 0
+      }
+    },
+    "even_block_numerator": {
+      "degrees": [
+        8,
+        4
+      ],
+      "integer_content": 1,
+      "maximum": "1738880/1",
+      "minimum": "384/1",
+      "nonnegative": true,
+      "sha256": "b3e65d07c1f601d986da6904a59236e9b72c29219bedb8a63541937d83fd3166",
+      "strictly_positive": true,
+      "term_count": 35,
+      "variables": [
+        "t",
+        "w"
+      ],
+      "zero_count": 0
+    },
+    "odd_block_numerator": {
+      "degrees": [
+        6,
+        3
+      ],
+      "integer_content": 1,
+      "maximum": "6464/1",
+      "minimum": "32/1",
+      "nonnegative": true,
+      "sha256": "98de2ddeb4fa7886ba16787e15fad42a1d8319241e9ca6696f90b2be678ddc9e",
+      "strictly_positive": true,
+      "term_count": 22,
+      "variables": [
+        "r",
+        "w"
+      ],
+      "zero_count": 0
+    },
+    "pair_state_derivative": {
+      "degrees": [
+        7,
+        2,
+        6
+      ],
+      "integer_content": 1,
+      "maximum": "10912/1",
+      "minimum": "1/1",
+      "nonnegative": true,
+      "sha256": "8a88f779aaef187c61ca407ede0b83e0ec4ce6d33ea41ea98ac591133a6eff86",
+      "strictly_positive": true,
+      "term_count": 78,
+      "variables": [
+        "z",
+        "u",
+        "n"
+      ],
+      "zero_count": 0
+    }
+  },
+  "strip_4_5": {
+    "defect_center_monotonicity": {
+      "basis_count": 35,
+      "entry_count": 273,
+      "maximum": "1104144/1",
+      "minimum": "128/1",
+      "nonnegative": true,
+      "sha256": "af8f77ae00e8df546cda6395ef66b5abe86dee51e487065acd806c44d217507c",
+      "strictly_positive": true,
+      "zero_count": 0
+    },
+    "endpoint_parity_numerators": {
+      "eta_0_omega_0": {
+        "degrees": [
+          10,
+          5
+        ],
+        "integer_content": 1,
+        "maximum": "479198720/1",
+        "minimum": "262144/1",
+        "nonnegative": true,
+        "sha256": "1798fdac44ded45c49b7f59f7e4d2e4e90d357c1a8877b1cb7888356a83856d4",
+        "strictly_positive": true,
+        "term_count": 51,
+        "variables": [
+          "t",
+          "v"
+        ],
+        "zero_count": 0
+      },
+      "eta_0_omega_1": {
+        "degrees": [
+          10,
+          5
+        ],
+        "integer_content": 1,
+        "maximum": "1247434944/1",
+        "minimum": "262144/1",
+        "nonnegative": true,
+        "sha256": "6a592d5bd855f741efce12ab0fd312043335e4c5cca887582285c0f1105d8afe",
+        "strictly_positive": true,
+        "term_count": 51,
+        "variables": [
+          "t",
+          "v"
+        ],
+        "zero_count": 0
+      },
+      "eta_1_omega_0": {
+        "degrees": [
+          12,
+          6
+        ],
+        "integer_content": 2,
+        "maximum": "2603917312/1",
+        "minimum": "315990/1",
+        "nonnegative": true,
+        "sha256": "9837616abbb0e9e0f6ce53fa7026f8b282ac0e6e873dd2dc043f42ea09da5fee",
+        "strictly_positive": true,
+        "term_count": 70,
+        "variables": [
+          "r",
+          "v"
+        ],
+        "zero_count": 0
+      },
+      "eta_1_omega_1": {
+        "degrees": [
+          12,
+          6
+        ],
+        "integer_content": 2,
+        "maximum": "7419961344/1",
+        "minimum": "524288/1",
+        "nonnegative": true,
+        "sha256": "bdde661ae5334d7bdf311c87fed4ce03b02fcfa3a625ecdcbc75bd045d049ea8",
+        "strictly_positive": true,
+        "term_count": 70,
+        "variables": [
+          "r",
+          "v"
+        ],
+        "zero_count": 0
+      }
+    },
+    "state_monotonicity": {
+      "basis_count": 12,
+      "entry_count": 56,
+      "maximum": "296/1",
+      "minimum": "0/1",
+      "nonnegative": true,
+      "sha256": "327967961624b5a1f24951239590bd1282169b750b15ed3b9154893839857fe7",
+      "strictly_positive": false,
+      "zero_count": 1
+    }
+  },
+  "worker_contract": "one serial worker; exact SymPy rational arithmetic"
+}
