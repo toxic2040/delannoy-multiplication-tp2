@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "Please cite the paper when this verification suite supports your work."
+title: "delannoy-multiplication-tp2: Exact verification of the sharp half-line threshold"
+type: software
+authors:
+  - family-names: Councilman
+    given-names: J.
+    orcid: "https://orcid.org/0009-0003-6265-5168"
+version: "2.0.0"
+date-released: "2026-08-03"
+doi: "10.5281/zenodo.21778524"
+repository-code: "https://github.com/toxic2040/delannoy-multiplication-tp2"
+url: "https://doi.org/10.5281/zenodo.21778524"
+license: MIT
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Councilman
+      given-names: J.
+      orcid: "https://orcid.org/0009-0003-6265-5168"
+  title: "Strict total positivity of a real Delannoy multiplication table: the sharp half-line threshold"
+  year: 2026
+  doi: "10.5281/zenodo.21778524"
+  url: "https://doi.org/10.5281/zenodo.21778524"

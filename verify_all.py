@@ -49,6 +49,7 @@ EXPECTED_MANIFEST_PATHS = tuple(
     sorted(
         {
             ".gitignore",
+            "CITATION.cff",
             "LICENSE",
             "LICENSE-CC-BY-4.0",
             "README.md",

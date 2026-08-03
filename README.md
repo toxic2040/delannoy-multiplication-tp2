@@ -1,5 +1,7 @@
 # Delannoy multiplication-table TP2
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21778524.svg)](https://doi.org/10.5281/zenodo.21778524)
+
 Exact verification code for the sharp half-line theorem:
 
     T(x,n) = sum_j 2^j C(x,j) C(n,j),
@@ -51,9 +53,16 @@ or certificate failures produce a nonzero exit.
 ## Scope
 
 This repository contains verification code and deterministic certificates.
-The paper's PDF and source are archived in the associated Zenodo record. The
-record DOI and citation metadata are inserted only after the release files have
-passed a clean-checkout replay.
+The paper's PDF and source are archived with this suite in the versioned Zenodo
+record [doi:10.5281/zenodo.21778524](https://doi.org/10.5281/zenodo.21778524).
+
+## Citation
+
+J. Councilman, *Strict total positivity of a real Delannoy multiplication
+table: the sharp half-line threshold*, version 2.0, 2026.
+[doi:10.5281/zenodo.21778524](https://doi.org/10.5281/zenodo.21778524)
+
+Machine-readable citation metadata is in `CITATION.cff`.
 
 ## License
 
