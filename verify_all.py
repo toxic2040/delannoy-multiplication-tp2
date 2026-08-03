@@ -53,6 +53,7 @@ EXPECTED_MANIFEST_PATHS = tuple(
             "CITATION.cff",
             "LICENSE",
             "LICENSE-CC-BY-4.0",
+            "OPEN.md",
             "README.md",
             "VERIFICATION_SCOPE.md",
             "requirements.txt",

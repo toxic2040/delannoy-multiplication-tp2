@@ -48,7 +48,9 @@ certificate. In particular, the Darboux necessity argument for `0 < x < 1/2`
 and the analytic Binet, beta-integral, and related remainder lemmas are proofs
 in the paper; the scripts reconstruct their algebraic consequences and finite
 certificates. The detailed branch-by-branch boundary is in
-[VERIFICATION_SCOPE.md](VERIFICATION_SCOPE.md).
+[VERIFICATION_SCOPE.md](VERIFICATION_SCOPE.md). Independent coefficientwise
+strengthenings that remain unresolved are stated precisely in
+[OPEN.md](OPEN.md); none is needed for the sharp TP2 theorem.
 
 The reference environment is CPython 3.14.5 with SymPy 1.14.0, pinned in
 `requirements.txt`. The scripts also
