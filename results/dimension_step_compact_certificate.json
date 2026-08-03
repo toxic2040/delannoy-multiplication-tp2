@@ -25,12 +25,8 @@
     "upper_single_maximum_value": true
   },
   "passed": true,
-  "producer_sha256": "65eb8feddff3cbaddb180e82073ee2e3e75ece68d5856a68a84b43c442cd2043",
+  "producer_sha256": "5e962ea4d27c0da4cf3016524044dca050566f11dbec7759ae52b8ecad7638d4",
   "schema": "dimension-step-compact-v1",
-  "source_status": {
-    "files": {},
-    "passed": true
-  },
   "strip_3_4": {
     "center_derivatives": {
       "lower_pair": {

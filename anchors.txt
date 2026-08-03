@@ -1,0 +1,561 @@
+[ok ] T(x,0) = P_0(2x+1)/0!
+[ok ] T(x,1) = P_1(2x+1)/1!
+[ok ] T(x,2) = P_2(2x+1)/2!
+[ok ] T(x,3) = P_3(2x+1)/3!
+[ok ] T(x,4) = P_4(2x+1)/4!
+[ok ] T(x,5) = P_5(2x+1)/5!
+[ok ] T(x,6) = P_6(2x+1)/6!
+[ok ] T(x,7) = P_7(2x+1)/7!
+[ok ] T(x,8) = P_8(2x+1)/8!
+[ok ] T(x,9) = P_9(2x+1)/9!
+[ok ] T(x,10) = P_10(2x+1)/10!
+[ok ] T(x,11) = P_11(2x+1)/11!
+[ok ] cell(1,1): ab=cd
+[ok ] cell(1,1): a+b-c-d=1
+[ok ] cell(1,2): ab=cd
+[ok ] cell(1,2): a+b-c-d=1
+[ok ] cell(1,3): ab=cd
+[ok ] cell(1,3): a+b-c-d=1
+[ok ] cell(1,4): ab=cd
+[ok ] cell(1,4): a+b-c-d=1
+[ok ] cell(1,5): ab=cd
+[ok ] cell(1,5): a+b-c-d=1
+[ok ] cell(1,6): ab=cd
+[ok ] cell(1,6): a+b-c-d=1
+[ok ] cell(1,7): ab=cd
+[ok ] cell(1,7): a+b-c-d=1
+[ok ] cell(2,1): ab=cd
+[ok ] cell(2,1): a+b-c-d=1
+[ok ] cell(2,2): ab=cd
+[ok ] cell(2,2): a+b-c-d=1
+[ok ] cell(2,3): ab=cd
+[ok ] cell(2,3): a+b-c-d=1
+[ok ] cell(2,4): ab=cd
+[ok ] cell(2,4): a+b-c-d=1
+[ok ] cell(2,5): ab=cd
+[ok ] cell(2,5): a+b-c-d=1
+[ok ] cell(2,6): ab=cd
+[ok ] cell(2,6): a+b-c-d=1
+[ok ] cell(2,7): ab=cd
+[ok ] cell(2,7): a+b-c-d=1
+[ok ] cell(3,1): ab=cd
+[ok ] cell(3,1): a+b-c-d=1
+[ok ] cell(3,2): ab=cd
+[ok ] cell(3,2): a+b-c-d=1
+[ok ] cell(3,3): ab=cd
+[ok ] cell(3,3): a+b-c-d=1
+[ok ] cell(3,4): ab=cd
+[ok ] cell(3,4): a+b-c-d=1
+[ok ] cell(3,5): ab=cd
+[ok ] cell(3,5): a+b-c-d=1
+[ok ] cell(3,6): ab=cd
+[ok ] cell(3,6): a+b-c-d=1
+[ok ] cell(3,7): ab=cd
+[ok ] cell(3,7): a+b-c-d=1
+[ok ] cell(4,1): ab=cd
+[ok ] cell(4,1): a+b-c-d=1
+[ok ] cell(4,2): ab=cd
+[ok ] cell(4,2): a+b-c-d=1
+[ok ] cell(4,3): ab=cd
+[ok ] cell(4,3): a+b-c-d=1
+[ok ] cell(4,4): ab=cd
+[ok ] cell(4,4): a+b-c-d=1
+[ok ] cell(4,5): ab=cd
+[ok ] cell(4,5): a+b-c-d=1
+[ok ] cell(4,6): ab=cd
+[ok ] cell(4,6): a+b-c-d=1
+[ok ] cell(4,7): ab=cd
+[ok ] cell(4,7): a+b-c-d=1
+[ok ] cell(5,1): ab=cd
+[ok ] cell(5,1): a+b-c-d=1
+[ok ] cell(5,2): ab=cd
+[ok ] cell(5,2): a+b-c-d=1
+[ok ] cell(5,3): ab=cd
+[ok ] cell(5,3): a+b-c-d=1
+[ok ] cell(5,4): ab=cd
+[ok ] cell(5,4): a+b-c-d=1
+[ok ] cell(5,5): ab=cd
+[ok ] cell(5,5): a+b-c-d=1
+[ok ] cell(5,6): ab=cd
+[ok ] cell(5,6): a+b-c-d=1
+[ok ] cell(5,7): ab=cd
+[ok ] cell(5,7): a+b-c-d=1
+[ok ] cell(6,1): ab=cd
+[ok ] cell(6,1): a+b-c-d=1
+[ok ] cell(6,2): ab=cd
+[ok ] cell(6,2): a+b-c-d=1
+[ok ] cell(6,3): ab=cd
+[ok ] cell(6,3): a+b-c-d=1
+[ok ] cell(6,4): ab=cd
+[ok ] cell(6,4): a+b-c-d=1
+[ok ] cell(6,5): ab=cd
+[ok ] cell(6,5): a+b-c-d=1
+[ok ] cell(6,6): ab=cd
+[ok ] cell(6,6): a+b-c-d=1
+[ok ] cell(6,7): ab=cd
+[ok ] cell(6,7): a+b-c-d=1
+[ok ] cell(7,1): ab=cd
+[ok ] cell(7,1): a+b-c-d=1
+[ok ] cell(7,2): ab=cd
+[ok ] cell(7,2): a+b-c-d=1
+[ok ] cell(7,3): ab=cd
+[ok ] cell(7,3): a+b-c-d=1
+[ok ] cell(7,4): ab=cd
+[ok ] cell(7,4): a+b-c-d=1
+[ok ] cell(7,5): ab=cd
+[ok ] cell(7,5): a+b-c-d=1
+[ok ] cell(7,6): ab=cd
+[ok ] cell(7,6): a+b-c-d=1
+[ok ] cell(7,7): ab=cd
+[ok ] cell(7,7): a+b-c-d=1
+[ok ] Delta_{1,1}(x) = (2x/3)(2x^4 - x^3 + x + 1)
+[ok ] 2x^4 - x^3 + x + 1 has no real root
+[ok ] T(1,0) = 2*0+1
+[ok ] T(1,1) = 2*1+1
+[ok ] T(1,2) = 2*2+1
+[ok ] T(1,3) = 2*3+1
+[ok ] T(1,4) = 2*4+1
+[ok ] T(1,5) = 2*5+1
+[ok ] T(1,6) = 2*6+1
+[ok ] T(1,7) = 2*7+1
+[ok ] T(1,8) = 2*8+1
+[ok ] T(1,9) = 2*9+1
+[ok ] T(1,10) = 2*10+1
+[ok ] T(1,11) = 2*11+1
+[ok ] T(1,12) = 2*12+1
+[ok ] T(1,13) = 2*13+1
+[ok ] T(1,14) = 2*14+1
+[ok ] Delta_{1,1}(1) = 2
+[ok ] Delta_{1,2}(1) = 2
+[ok ] Delta_{1,3}(1) = 2
+[ok ] Delta_{1,4}(1) = 2
+[ok ] Delta_{1,5}(1) = 2
+[ok ] Delta_{1,6}(1) = 2
+[ok ] Delta_{2,1}(1) = 2
+[ok ] Delta_{2,2}(1) = 2
+[ok ] Delta_{2,3}(1) = 2
+[ok ] Delta_{2,4}(1) = 2
+[ok ] Delta_{2,5}(1) = 2
+[ok ] Delta_{2,6}(1) = 2
+[ok ] Delta_{3,1}(1) = 2
+[ok ] Delta_{3,2}(1) = 2
+[ok ] Delta_{3,3}(1) = 2
+[ok ] Delta_{3,4}(1) = 2
+[ok ] Delta_{3,5}(1) = 2
+[ok ] Delta_{3,6}(1) = 2
+[ok ] Delta_{4,1}(1) = 2
+[ok ] Delta_{4,2}(1) = 2
+[ok ] Delta_{4,3}(1) = 2
+[ok ] Delta_{4,4}(1) = 2
+[ok ] Delta_{4,5}(1) = 2
+[ok ] Delta_{4,6}(1) = 2
+[ok ] Delta_{5,1}(1) = 2
+[ok ] Delta_{5,2}(1) = 2
+[ok ] Delta_{5,3}(1) = 2
+[ok ] Delta_{5,4}(1) = 2
+[ok ] Delta_{5,5}(1) = 2
+[ok ] Delta_{5,6}(1) = 2
+[ok ] Delta_{6,1}(1) = 2
+[ok ] Delta_{6,2}(1) = 2
+[ok ] Delta_{6,3}(1) = 2
+[ok ] Delta_{6,4}(1) = 2
+[ok ] Delta_{6,5}(1) = 2
+[ok ] Delta_{6,6}(1) = 2
+[ok ] sum_k (-1)^k T(x,k)T(x,0-k) = [0 even]
+[ok ] sum_k (-1)^k T(x,k)T(x,1-k) = [1 even]
+[ok ] sum_k (-1)^k T(x,k)T(x,2-k) = [2 even]
+[ok ] sum_k (-1)^k T(x,k)T(x,3-k) = [3 even]
+[ok ] sum_k (-1)^k T(x,k)T(x,4-k) = [4 even]
+[ok ] sum_k (-1)^k T(x,k)T(x,5-k) = [5 even]
+[ok ] sum_k (-1)^k T(x,k)T(x,6-k) = [6 even]
+[ok ] sum_k (-1)^k T(x,k)T(x,7-k) = [7 even]
+[ok ] sum_k (-1)^k T(x,k)T(x,8-k) = [8 even]
+[ok ] sum_k (-1)^k T(x,k)T(x,9-k) = [9 even]
+[ok ] sum_k (-1)^k T(x,k)T(x,10-k) = [10 even]
+[ok ] V0(z)V0(-z) = 1/(1-z^2)
+[ok ] V0 matches T(1/2,n) through degree 2
+[ok ] M_{1,1}(V0) = -13/6
+[ok ] M_{1,1}(V_g) = 4g - 13/6
+[ok ] true endpoint odd generator g = 2/3 restores M_{1,1} = 1/2
+[ok ] (alpha,beta)=(3/4,5/4), cell (2,1) = -25/512
+[ok ] (alpha,beta)=(3,2), first cell = -4
+[ok ] M_{1,1}(lam,lam) = (4/3) lam^3 (lam-1)(lam-2)
+[ok ] det(tI - K_1) = P_1(t)
+[ok ] det(I - K_1^2) = (1!)^2
+[ok ] T_1^2 = det(I + y B_1)
+[ok ] det(tI - K_2) = P_2(t)
+[ok ] det(I - K_2^2) = (2!)^2
+[ok ] T_2^2 = det(I + y B_2)
+[ok ] det(tI - K_3) = P_3(t)
+[ok ] det(I - K_3^2) = (3!)^2
+[ok ] T_3^2 = det(I + y B_3)
+[ok ] det(tI - K_4) = P_4(t)
+[ok ] det(I - K_4^2) = (4!)^2
+[ok ] T_4^2 = det(I + y B_4)
+[ok ] det(tI - K_5) = P_5(t)
+[ok ] det(I - K_5^2) = (5!)^2
+[ok ] T_5^2 = det(I + y B_5)
+[ok ] det(tI - K_6) = P_6(t)
+[ok ] det(I - K_6^2) = (6!)^2
+[ok ] T_6^2 = det(I + y B_6)
+[ok ] det(tI - K_7) = P_7(t)
+[ok ] det(I - K_7^2) = (7!)^2
+[ok ] T_7^2 = det(I + y B_7)
+[ok ] det(tI - K_8) = P_8(t)
+[ok ] det(I - K_8^2) = (8!)^2
+[ok ] T_8^2 = det(I + y B_8)
+[ok ] Green kernel entries (B_n)_{ij} = s_max(i,j) on same parity, 0 otherwise
+[ok ] Q_1^+ + (1+y) Q_1^- = 1
+[ok ] Q_2^+ + (1+y) Q_2^- = 2
+[ok ] Q_3^+ + (1+y) Q_3^- = 3
+[ok ] Q_4^+ + (1+y) Q_4^- = 4
+[ok ] Q_5^+ + (1+y) Q_5^- = 5
+[ok ] Q_6^+ + (1+y) Q_6^- = 6
+[ok ] Q_7^+ + (1+y) Q_7^- = 7
+[ok ] Q_8^+ + (1+y) Q_8^- = 8
+[ok ] T_3/T_1 = 1 + y/6 (the n=1 equality edge)
+[ok ] paired-ratio enclosure strict on 2 <= n <= 11
+[ok ] D_{2,2}(3+w) has the factor (w+3)
+[ok ] D_{2,2} quotient coefficient vector
+[ok ] [y] D_{1,2} = -8/5
+[ok ] [y](D_{1,4} - D_{1,2}) = -88/45
+[ok ] every D_{2,2} quotient coefficient is positive
+[ok ] witness original cell (1,1) = 1/10
+[ok ] witness original cell (1,2) = 21/100
+[ok ] witness original cell (2,1) = 21/100
+[ok ] witness original cell (2,2) = 2/5
+[ok ] witness is strictly increasing
+[ok ] partial sums have D_S(2,1) = -9/5
+[ok ] partial sums preserve the (1,1) cell
+[ok ] H dimension step [3,4], parity 0: numerator coefficients
+[ok ] H dimension step [3,4], parity 0: denominator coefficients
+[ok ] H dimension step [3,4], parity 1: numerator coefficients
+[ok ] H dimension step [3,4], parity 1: denominator coefficients
+[ok ] H dimension step [4,5], parity 0: Bernstein coefficients
+[ok ] H dimension step [4,5], parity 0: denominator coefficients
+[ok ] H dimension step [4,5], parity 1: Bernstein coefficients
+[ok ] H dimension step [4,5], parity 1: denominator coefficients
+[ok ] H dimension step [5,infinity), parity 0: reduction identities
+[ok ] H dimension step [5,infinity), parity 0: remainder coefficients
+[ok ] H dimension step [5,infinity), parity 0: denominator coefficients
+[ok ] H dimension step [5,infinity), parity 1: reduction identities
+[ok ] H dimension step [5,infinity), parity 1: remainder coefficients
+[ok ] H dimension step [5,infinity), parity 1: denominator coefficients
+[ok ] H q-cap [3,4]: parity bases, residual, and barrier identity
+[ok ] H q-cap [4,infinity): contiguous identity and quotient algebra
+[ok ] H base strip: two-step ratio reconstruction
+[ok ] H base strip: ratio derivatives
+[ok ] H base strip [3,4]: state trap endpoints
+[ok ] H base strip [3,4]: lower-bound factorization
+[ok ] H base strip at center 3: alternating state and margins
+[ok ] H base strip [4,5]: two-step state trap
+[ok ] H base strip [4,5]: lower-bound factorization
+[ok ] H base strip [4,5]: energy is positive
+[ok ] H base strip [5,infinity): moving-root trap identities
+[ok ] H dimension step: final hyperbolic-addition margin
+[ok ] endpoint closed forms satisfy the recurrence and bases
+[ok ] endpoint ratios and logarithmic decomposition
+[ok ] endpoint alpha is positive and strictly decreasing
+[ok ] endpoint smooth-gap and domination identities
+[ok ] three-halves closed forms satisfy the recurrence and bases
+[ok ] R1 parity branches
+[ok ] R1 odd-odd polynomial identity and positivity
+[ok ] R1 even-even polynomial identity and positivity
+[ok ] R1 odd-even polynomial identity and positivity
+[ok ] five-halves closed forms satisfy the recurrence and bases
+[ok ] R2 parity branches
+[ok ] R2 affine margin and denominator factors
+[ok ] R2 odd-odd Q polynomial identity and positivity
+[ok ] R2 even-even Q polynomial identity and positivity
+[ok ] R2 odd-even Q polynomial identity and positivity
+[ok ] endpoint E_{7,1} - E_{7,3}
+[ok ] endpoint E_{8,1} - E_{8,3}
+[ok ] endpoint E_{9,1} - E_{9,3}
+[ok ] endpoint E_{10,1} - E_{10,3}
+[ok ] endpoint E_{11,1} - E_{11,3}
+[ok ] endpoint E_{12,1} - E_{12,3}
+[ok ] x=1/2: (n+1)c_(n+1) = h c_n + (n-1)c_(n-1)
+[ok ] x=1/2: h T(x,n) = u_n + u_(n+1)
+[ok ] x=1/2: T_n/T_(n-1) = z_n (1+z_(n+1))/(1+z_n)
+[ok ] x=1/2: two-step map z_(n+2) = z_n/(1+(h/n)z_n) + h/(n+1)
+[ok ] x=3/5: (n+1)c_(n+1) = h c_n + (n-1)c_(n-1)
+[ok ] x=3/5: h T(x,n) = u_n + u_(n+1)
+[ok ] x=3/5: T_n/T_(n-1) = z_n (1+z_(n+1))/(1+z_n)
+[ok ] x=3/5: two-step map z_(n+2) = z_n/(1+(h/n)z_n) + h/(n+1)
+[ok ] x=1: (n+1)c_(n+1) = h c_n + (n-1)c_(n-1)
+[ok ] x=1: h T(x,n) = u_n + u_(n+1)
+[ok ] x=1: T_n/T_(n-1) = z_n (1+z_(n+1))/(1+z_n)
+[ok ] x=1: two-step map z_(n+2) = z_n/(1+(h/n)z_n) + h/(n+1)
+[ok ] x=7/4: (n+1)c_(n+1) = h c_n + (n-1)c_(n-1)
+[ok ] x=7/4: h T(x,n) = u_n + u_(n+1)
+[ok ] x=7/4: T_n/T_(n-1) = z_n (1+z_(n+1))/(1+z_n)
+[ok ] x=7/4: two-step map z_(n+2) = z_n/(1+(h/n)z_n) + h/(n+1)
+[ok ] x=3: (n+1)c_(n+1) = h c_n + (n-1)c_(n-1)
+[ok ] x=3: h T(x,n) = u_n + u_(n+1)
+[ok ] x=3: T_n/T_(n-1) = z_n (1+z_(n+1))/(1+z_n)
+[ok ] x=3: two-step map z_(n+2) = z_n/(1+(h/n)z_n) + h/(n+1)
+[ok ] h=1 orbit: z_(2m)=1 and z_(2m+1)=(2m+1)/(2m)
+[ok ] h=1 parity swing is exactly 1/(n-1), i.e. order n^-h with h=1
+[ok ] h=2 orbit: c_n = 2 for every n>=1
+[ok ] h=2 orbit: z_n = n/(n-1), no parity oscillation
+[ok ] x=1/2: window product equals T_aT_b/T_cT_d
+[ok ] x=3/5: window product equals T_aT_b/T_cT_d
+[ok ] x=1: window product equals T_aT_b/T_cT_d
+[ok ] x=7/4: window product equals T_aT_b/T_cT_d
+[ok ] x=3: window product equals T_aT_b/T_cT_d
+[ok ] tr B_1 = sum_(r<ceil(1/2)) 1/(2r+1)
+[ok ] tr B_2 = sum_(r<ceil(2/2)) 1/(2r+1)
+[ok ] tr B_3 = sum_(r<ceil(3/2)) 1/(2r+1)
+[ok ] tr B_4 = sum_(r<ceil(4/2)) 1/(2r+1)
+[ok ] tr B_5 = sum_(r<ceil(5/2)) 1/(2r+1)
+[ok ] tr B_6 = sum_(r<ceil(6/2)) 1/(2r+1)
+[ok ] tr B_7 = sum_(r<ceil(7/2)) 1/(2r+1)
+[ok ] tr B_8 = sum_(r<ceil(8/2)) 1/(2r+1)
+[ok ] tr B_9 = sum_(r<ceil(9/2)) 1/(2r+1)
+[ok ] tau_6 + tau_2 - tau_3 - tau_4 = -2/15
+[ok ] and ab times that is the [y] coefficient -8/5
+[ok ] e_1(L) = e_1(R)
+[ok ] e_4(L) = e_4(R)
+[ok ] e_2(L) - e_2(R) = 2(2p+1)
+[ok ] e_3(L) - e_3(R) = 2p(p+1)(2q+3)
+[ok ] prod(s+l) - prod(s+r) = 2s((2p+1)s + p(p+1)(2q+3))
+[ok ] (W) holds on all 784 cells with q>=2
+[ok ] (W) FAILS at q=1, x=1/2, p=8, 10, 12 (mixed parity)
+[ok ] (W) holds at q=1, x=1/2, for odd p=7,9,11 (same parity)
+[ok ] the q=1 failure is an endpoint phenomenon: p=8 is positive off x=1/2
+[ok ] universal dimension step on the exact regression grid
+[ok ] W side-ratio derivative at (p,q,w)=(3,3,0)
+[ok ] lower transfer integration-by-parts identity
+[ok ] upper transfer integration-by-parts identity
+[ok ] beta_n/beta_(n-1) = (n-x)/(n+x)
+[ok ] beta_(n-1)(1/2) = 1/(2n-1)
+[ok ] gamma_n/gamma_(n-1) product ratio
+[ok ] two consecutive lower ratios give the exact transfer constant
+[ok ] marginal transfer half-amplitude is 1/2
+[ok ] two consecutive upper ratios give the exact transfer constant
+[ok ] C_-(h) substitution
+[ok ] C_+(h) substitution
+[ok ] T-coordinate decay constant agrees by reflection
+[ok ] odd-cycle Q_0(1)=1
+[ok ] odd-cycle Q_0'(1)=zeta_0
+[ok ] odd-cycle Q_1(1)=1
+[ok ] odd-cycle Q_1'(1)=zeta_1
+[ok ] odd-cycle Q_2(1)=1
+[ok ] odd-cycle Q_2'(1)=zeta_2
+[ok ] odd-cycle Q_3(1)=1
+[ok ] odd-cycle Q_3'(1)=zeta_3
+[ok ] odd-cycle Q_4(1)=1
+[ok ] odd-cycle Q_4'(1)=zeta_4
+[ok ] odd-cycle Q_5(1)=1
+[ok ] odd-cycle Q_5'(1)=zeta_5
+[ok ] odd-cycle Q_6(1)=1
+[ok ] odd-cycle Q_6'(1)=zeta_6
+[ok ] odd-cycle Q_7(1)=1
+[ok ] odd-cycle Q_7'(1)=zeta_7
+[ok ] odd-cycle Q_8(1)=1
+[ok ] odd-cycle Q_8'(1)=zeta_8
+[ok ] odd-cycle Q_9(1)=1
+[ok ] odd-cycle Q_9'(1)=zeta_9
+[ok ] odd-cycle Q_10(1)=1
+[ok ] odd-cycle Q_10'(1)=zeta_10
+[ok ] odd-cycle Q_11(1)=1
+[ok ] odd-cycle Q_11'(1)=zeta_11
+[ok ] odd-cycle Q_12(1)=1
+[ok ] odd-cycle Q_12'(1)=zeta_12
+[ok ] odd-cycle Q_13(1)=1
+[ok ] odd-cycle Q_13'(1)=zeta_13
+[ok ] odd-cycle Q_14(1)=1
+[ok ] odd-cycle Q_14'(1)=zeta_14
+[ok ] odd-cycle Q_15(1)=1
+[ok ] odd-cycle Q_15'(1)=zeta_15
+[ok ] odd-cycle Q_16(1)=1
+[ok ] odd-cycle Q_16'(1)=zeta_16
+[ok ] odd-cycle Q_17(1)=1
+[ok ] odd-cycle Q_17'(1)=zeta_17
+[ok ] odd-cycle Q_18(1)=1
+[ok ] odd-cycle Q_18'(1)=zeta_18
+[ok ] odd-cycle Q_19(1)=1
+[ok ] odd-cycle Q_19'(1)=zeta_19
+[ok ] odd-cycle Q_20(1)=1
+[ok ] odd-cycle Q_20'(1)=zeta_20
+[ok ] odd-cycle Q_21(1)=1
+[ok ] odd-cycle Q_21'(1)=zeta_21
+[ok ] odd-cycle Q_22(1)=1
+[ok ] odd-cycle Q_22'(1)=zeta_22
+[ok ] odd-cycle Q_23(1)=1
+[ok ] odd-cycle Q_23'(1)=zeta_23
+[ok ] odd-cycle Q_24(1)=1
+[ok ] odd-cycle Q_24'(1)=zeta_24
+[ok ] odd-cycle Q_25(1)=1
+[ok ] odd-cycle Q_25'(1)=zeta_25
+[ok ] odd-cycle Q_26(1)=1
+[ok ] odd-cycle Q_26'(1)=zeta_26
+[ok ] odd-cycle Q_27(1)=1
+[ok ] odd-cycle Q_27'(1)=zeta_27
+[ok ] odd-cycle Q_28(1)=1
+[ok ] odd-cycle Q_28'(1)=zeta_28
+[ok ] odd-cycle Q_29(1)=1
+[ok ] odd-cycle Q_29'(1)=zeta_29
+[ok ] odd-cycle Q_30(1)=1
+[ok ] odd-cycle Q_30'(1)=zeta_30
+[ok ] odd-cycle Q_31(1)=1
+[ok ] odd-cycle Q_31'(1)=zeta_31
+[ok ] odd-cycle Q_32(1)=1
+[ok ] odd-cycle Q_32'(1)=zeta_32
+[ok ] odd-cycle Q_33(1)=1
+[ok ] odd-cycle Q_33'(1)=zeta_33
+[ok ] odd-cycle Q_34(1)=1
+[ok ] odd-cycle Q_34'(1)=zeta_34
+[ok ] odd-cycle Q_35(1)=1
+[ok ] odd-cycle Q_35'(1)=zeta_35
+[ok ] odd-cycle Q_36(1)=1
+[ok ] odd-cycle Q_36'(1)=zeta_36
+[ok ] odd-cycle Q_37(1)=1
+[ok ] odd-cycle Q_37'(1)=zeta_37
+[ok ] odd-cycle Q_38(1)=1
+[ok ] odd-cycle Q_38'(1)=zeta_38
+[ok ] odd-cycle Q_39(1)=1
+[ok ] odd-cycle Q_39'(1)=zeta_39
+[ok ] odd-cycle Q_40(1)=1
+[ok ] odd-cycle Q_40'(1)=zeta_40
+[ok ] odd-cycle Q_41(1)=1
+[ok ] odd-cycle Q_41'(1)=zeta_41
+[ok ] odd-cycle Q_42(1)=1
+[ok ] odd-cycle Q_42'(1)=zeta_42
+[ok ] odd-cycle Q_43(1)=1
+[ok ] odd-cycle Q_43'(1)=zeta_43
+[ok ] odd-cycle Q_44(1)=1
+[ok ] odd-cycle Q_44'(1)=zeta_44
+[ok ] odd-cycle Q_45(1)=1
+[ok ] odd-cycle Q_45'(1)=zeta_45
+[ok ] delta_1(1,3)
+[ok ] delta_1(1,3) = kappa_(p+1)-kappa_p
+[ok ] delta_1(2,2)
+[ok ] delta_1(2,2) = kappa_(p+1)-kappa_p
+[ok ] delta_1(3,3)
+[ok ] delta_1(3,3) = kappa_(p+1)-kappa_p
+[ok ] delta_1(1,2)
+[ok ] delta_1(1,2) = kappa_(p+1)-kappa_p
+[ok ] delta_1(2,3)
+[ok ] delta_1(2,3) = kappa_(p+1)-kappa_p
+[ok ] first mixed-parity Cauchy margin
+[ok ] second mixed-parity Cauchy margin
+[ok ] same-parity delta_1 exact census has 105 cells
+[ok ] same-parity delta_1 is positive on the exact census
+[ok ] mixed-parity delta_1 exact census has 105 cells
+[ok ] mixed-parity delta_1 is negative on the exact census
+[ok ] integer odd-cycle rows satisfy Q_n(1)=1 through n=285
+[ok ] raw survival census has 105 cells
+[ok ] raw survival census exact divisions
+[ok ] raw survival census has no nonpositive coefficient
+[ok ] raw survival census coefficient count
+[ok ] raw survival controls at (1,3)
+[ok ] raw survival canonical digest
+[ok ] scale quotient fence below u=4
+[ok ] scale quotient positive control at u=4
+[ok ] scale quotient q=1 fence at u=4
+[ok ] division by u-1 reconstructs the closure polynomial
+[ok ] lower two-block atom at (1,3)
+[ok ] division by u-1 reconstructs the closure polynomial
+[ok ] [u^4] G at out-of-range (1,1)
+[ok ] delta_2(2,2)
+[ok ] second log derivative at (2,2)
+[ok ] same-parity U_2 logarithmic beta bound
+[ok ] same-parity U_2 odd first-moment upper certificate
+[ok ] same-parity U_2 even first-moment upper certificate
+[ok ] same-parity U_2 endpoint X certificate, odd bulk
+[ok ] same-parity U_2 endpoint X certificate, even bulk
+[ok ] same-parity U_2 p=1 exact row
+[ok ] same-parity U_2 p=2 exact row
+[ok ] same-parity U_2(1,3)
+[ok ] same-parity U_2(2,2)
+[ok ] same-parity U_2 is positive on the 105-cell exact regression census
+[ok ] threshold-tail constant coefficient
+[ok ] threshold-tail shifted coefficients
+[ok ] threshold Q_n(4) parity formulas through m=18
+[ok ] threshold laws are normalized through m=18
+[ok ] positive threshold PGF recurrences through m=18
+[ok ] positive threshold survival recurrence (227 gates)
+[ok ] finite cemetery anchors in five cells
+[ok ] cemetery-tail probability identity (120 tails)
+[ok ] cemetery mass is load-bearing at (p,q,r)=(1,3,3)
+[ok ] abstract consecutive-scale factorization
+[ok ] abstract C quotient factorization
+[ok ] MIXED-LR_2 normalized first minor at (1,2)
+[ok ] MIXED-LR_2 probe has 50 cells
+[ok ] MIXED-LR_2 common degrees
+[ok ] MIXED-LR_2 finite u=4 anchors
+[ok ] MIXED-LR_2 adjacent minors
+[ok ] MIXED-LR_2 Wronskian coefficients
+[ok ] MIXED-LR_2 total signs and maximum degree
+[ok ] MIXED-LR_2 canonical reconstruction digest
+[ok ] threshold-shift F_4 coefficients
+[ok ] threshold-shift F_6 coefficients
+[ok ] threshold-shift first LR cross-margin
+[ok ] threshold-shift second LR cross-margin
+[ok ] positive Green rank-one birth at n=1
+[ok ] threshold resolvent rank-one birth n=1, u0=2
+[ok ] threshold coefficient ratios increase n=1, u0=2
+[ok ] threshold resolvent rank-one birth n=1, u0=4
+[ok ] threshold coefficient ratios increase n=1, u0=4
+[ok ] threshold resolvent rank-one birth n=1, u0=7
+[ok ] threshold coefficient ratios increase n=1, u0=7
+[ok ] positive Green rank-one birth at n=2
+[ok ] threshold resolvent rank-one birth n=2, u0=2
+[ok ] threshold coefficient ratios increase n=2, u0=2
+[ok ] threshold resolvent rank-one birth n=2, u0=4
+[ok ] threshold coefficient ratios increase n=2, u0=4
+[ok ] threshold resolvent rank-one birth n=2, u0=7
+[ok ] threshold coefficient ratios increase n=2, u0=7
+[ok ] positive Green rank-one birth at n=3
+[ok ] threshold resolvent rank-one birth n=3, u0=2
+[ok ] threshold coefficient ratios increase n=3, u0=2
+[ok ] threshold resolvent rank-one birth n=3, u0=4
+[ok ] threshold coefficient ratios increase n=3, u0=4
+[ok ] threshold resolvent rank-one birth n=3, u0=7
+[ok ] threshold coefficient ratios increase n=3, u0=7
+[ok ] positive Green rank-one birth at n=4
+[ok ] threshold resolvent rank-one birth n=4, u0=2
+[ok ] threshold coefficient ratios increase n=4, u0=2
+[ok ] threshold resolvent rank-one birth n=4, u0=4
+[ok ] threshold coefficient ratios increase n=4, u0=4
+[ok ] threshold resolvent rank-one birth n=4, u0=7
+[ok ] threshold coefficient ratios increase n=4, u0=7
+[ok ] positive Green rank-one birth at n=5
+[ok ] threshold resolvent rank-one birth n=5, u0=2
+[ok ] threshold coefficient ratios increase n=5, u0=2
+[ok ] threshold resolvent rank-one birth n=5, u0=4
+[ok ] threshold coefficient ratios increase n=5, u0=4
+[ok ] threshold resolvent rank-one birth n=5, u0=7
+[ok ] threshold coefficient ratios increase n=5, u0=7
+[ok ] positive Green rank-one birth at n=6
+[ok ] threshold resolvent rank-one birth n=6, u0=2
+[ok ] threshold coefficient ratios increase n=6, u0=2
+[ok ] threshold resolvent rank-one birth n=6, u0=4
+[ok ] threshold coefficient ratios increase n=6, u0=4
+[ok ] threshold resolvent rank-one birth n=6, u0=7
+[ok ] threshold coefficient ratios increase n=6, u0=7
+[ok ] positive Green rank-one birth at n=7
+[ok ] threshold resolvent rank-one birth n=7, u0=2
+[ok ] threshold coefficient ratios increase n=7, u0=2
+[ok ] threshold resolvent rank-one birth n=7, u0=4
+[ok ] threshold coefficient ratios increase n=7, u0=4
+[ok ] threshold resolvent rank-one birth n=7, u0=7
+[ok ] threshold coefficient ratios increase n=7, u0=7
+[ok ] positive Green rank-one birth at n=8
+[ok ] threshold resolvent rank-one birth n=8, u0=2
+[ok ] threshold coefficient ratios increase n=8, u0=2
+[ok ] threshold resolvent rank-one birth n=8, u0=4
+[ok ] threshold coefficient ratios increase n=8, u0=4
+[ok ] threshold resolvent rank-one birth n=8, u0=7
+[ok ] threshold coefficient ratios increase n=8, u0=7
+[ok ] thm:inc escape witness, increment expansion in v = x-1
+[ok ] thm:inc escape witness, all coefficients nonnegative
+[ok ] manuscript sha256 binds to 19c537ffee982da4...
+
+manuscript        delannoy_multiplication_table_tp2.tex
+manuscript_sha256 19c537ffee982da4d9d8dc3ba39e0503ec92709eccd0a8c86f32e2d2f0eaf297
+interpreter       CPython 3.14.5 (GIL disabled)
+sympy             1.14.0
+
+PASS: every manuscript anchor reproduced exactly (552 exact checks)

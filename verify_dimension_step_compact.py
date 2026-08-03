@@ -16,24 +16,11 @@ import sympy as sp
 HERE = Path(__file__).resolve().parent
 DEFAULT_OUTPUT = HERE / "results" / "dimension_step_compact_certificate.json"
 SCHEMA = "dimension-step-compact-v1"
-SOURCE_HASHES: dict[str, str] = {}
 
 
 def fraction_text(value: sp.Expr | Fraction | int) -> str:
     rational = sp.Rational(value)
     return f"{int(rational.p)}/{int(rational.q)}"
-
-
-def source_status() -> dict[str, object]:
-    rows = {}
-    for name, expected in SOURCE_HASHES.items():
-        path = HERE / name
-        actual = hashlib.sha256(path.read_bytes()).hexdigest() if path.exists() else "MISSING"
-        rows[name] = {"expected": expected, "actual": actual}
-    return {
-        "passed": all(row["expected"] == row["actual"] for row in rows.values()),
-        "files": rows,
-    }
 
 
 def polynomial_record(expression: sp.Expr, variables: tuple[sp.Symbol, ...]) -> dict[str, object]:
@@ -378,8 +365,7 @@ def main() -> None:
         **{f"endpoint_ratio_{name}": value for name, value in endpoint_ratio_identities.items()},
     }
     passed = (
-        source_status()["passed"]
-        and all(identities.values())
+        all(identities.values())
         and all(record["strictly_positive"] for record in all_records if record is not g_record)
         and g_record["nonnegative"]
         and g_record["zero_count"] == 1
@@ -392,7 +378,6 @@ def main() -> None:
         "producer_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
         "classification": "all-parameter proof on two compact center strips",
         "worker_contract": "one serial worker; exact SymPy rational arithmetic",
-        "source_status": source_status(),
         "identities": identities,
         "strip_3_4": {
             "pair_state_derivative": pair_state_record,

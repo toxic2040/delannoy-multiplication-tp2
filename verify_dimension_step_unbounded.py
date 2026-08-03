@@ -15,7 +15,6 @@ import sympy as sp
 HERE = Path(__file__).resolve().parent
 DEFAULT_OUTPUT = HERE / "results" / "dimension_step_unbounded_certificate.json"
 SCHEMA = "dimension-step-unbounded-v1"
-SOURCE_HASHES: dict[str, str] = {}
 EXPECTED_RESULTANT = {
     "degrees": [8, 20],
     "term_count": 146,
@@ -27,16 +26,6 @@ EXPECTED_RESULTANT = {
 }
 
 
-def source_status() -> dict[str, object]:
-    rows: dict[str, dict[str, str]] = {}
-    for name, expected in SOURCE_HASHES.items():
-        path = HERE / name
-        actual = hashlib.sha256(path.read_bytes()).hexdigest() if path.exists() else "MISSING"
-        rows[name] = {"expected": expected, "actual": actual}
-    return {
-        "passed": all(row["expected"] == row["actual"] for row in rows.values()),
-        "files": rows,
-    }
 
 
 def fraction_text(value: sp.Expr | int) -> str:
@@ -642,10 +631,8 @@ def main() -> None:
         ),
     }
 
-    sources = source_status()
     passed = (
-        sources["passed"]
-        and all(scalar_identities.values())
+        all(scalar_identities.values())
         and scalar_domain["adjacent_denominator_positive"]
         and scalar_domain["derivative_denominator_positive"]
         and scalar_domain["unique_simple_root_in_open_unit_interval"]
@@ -691,7 +678,6 @@ def main() -> None:
         "producer_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
         "classification": "all-parameter proof on the unbounded center strip",
         "worker_contract": "one serial worker; exact SymPy rational and integer arithmetic",
-        "source_status": sources,
         "scalar_adjacent_difference": {
             "quartic_degree": int(sp.Poly(p_n, z).degree()),
             "threshold_polynomial": str(p_n),

@@ -17,6 +17,8 @@ from __future__ import annotations
 from fractions import Fraction
 import hashlib
 import math
+import pathlib
+import platform
 import sys
 
 import sympy as sp
@@ -3487,6 +3489,32 @@ check(
     True,
 )
 
+
+# ------------------------------------------------- environment and TeX binding
+#
+# This suite recomputes the manuscript's mathematics from first principles; it
+# does not parse the TeX.  What ties a given run to a given manuscript is the
+# digest below, which the release manifest also carries.
+
+MANUSCRIPT = "delannoy_multiplication_table_tp2.tex"
+_tex_path = pathlib.Path(__file__).resolve().parent / MANUSCRIPT
+_tex_sha = (
+    hashlib.sha256(_tex_path.read_bytes()).hexdigest()
+    if _tex_path.exists()
+    else "MISSING"
+)
+
+if "--expect-tex-sha" in sys.argv:
+    _want = sys.argv[sys.argv.index("--expect-tex-sha") + 1]
+    check(f"manuscript sha256 binds to {_want[:16]}...", _tex_sha, _want)
+
+print()
+print(f"manuscript        {MANUSCRIPT}")
+print(f"manuscript_sha256 {_tex_sha}")
+print(f"interpreter       {platform.python_implementation()} "
+      f"{platform.python_version()} (GIL "
+      f"{'disabled' if not getattr(sys, '_is_gil_enabled', lambda: True)() else 'enabled'})")
+print(f"sympy             {sp.__version__}")
 
 # ---------------------------------------------------------------- verdict
 print()
