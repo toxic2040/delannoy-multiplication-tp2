@@ -1,0 +1,2 @@
+# Reference replay dependency
+sympy==1.14.0

@@ -1,0 +1,750 @@
+{
+  "body_sha256": "5fc101e62ece90d32e6b3914c80cba6af22c6509be6bfb43241ed19c52634c4f",
+  "e1": {
+    "analytic_inputs": [
+      "Binet integral remainder for log-Gamma ratios",
+      "beta-integral bound for the alternating gamma quotient",
+      "Euler integral bound gamma > H_6 - log(7)",
+      "digamma recurrence and monotonicity",
+      "log-convexity of Gamma on [1,2]",
+      "alternating geometric and Gregory integral remainders"
+    ],
+    "derived_coefficients": {
+      "a1": "x/2",
+      "a2": "x*(x - 2)*(2*x + 1)/24",
+      "a3": "-x**2*(2*x - 3)/24",
+      "b2": "-x*(x - 2)*(2*x + 1)/12",
+      "q1": "-(2*x + 1)/2",
+      "s4": "-x*(5*x**7 - 60*x**6 + 290*x**5 - 684*x**4 + 815*x**3 - 560*x**2 + 240*x - 16)/1920"
+    },
+    "envelopes": {
+      "alternating_n^(-2x-3)": "22658383204482392293573360607372639572448478895911005290839521509407650240676628032266707031/43431095847726985300165392754155093383275663862072299675160662620226468933305511601782195200",
+      "quadratic_n^(-4x-2)": "174574156816379356420747678079236164342434843374496776847384471991414977490219041851183369/86862192032914129509123476140448829223220862249098740070278907933015339479310673940675430400",
+      "smooth_n^-4": "11878541009397321929554873875343653029509096210980050793926473705710227500819820075742227078909900612843/215710141430940414267195372456022031695816070392404464314555736739483318175707433286982696960000000000000"
+    },
+    "range": {
+      "n": "n >= 105",
+      "x": "1/2 <= x <= 1"
+    }
+  },
+  "gates": [
+    {
+      "evidence": "x/2",
+      "name": "E1 a1 derived from (7)",
+      "passed": true
+    },
+    {
+      "evidence": "x*(x - 2)*(2*x + 1)/24",
+      "name": "E1 a2 derived from (7)",
+      "passed": true
+    },
+    {
+      "evidence": "-x**2*(2*x - 3)/24",
+      "name": "E1 a3 derived from (7)",
+      "passed": true
+    },
+    {
+      "evidence": "-(2*x + 1)/2",
+      "name": "E1 alternating linear term derived from (8)",
+      "passed": true
+    },
+    {
+      "evidence": "-x*(x - 2)*(2*x + 1)/12",
+      "name": "E1 b2 derived from (8)",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "-31/1920",
+        "-267/32768"
+      ],
+      "name": "smooth fourth coefficient is uniformly small",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "worst_successive_ratio": "1/42"
+      },
+      "name": "smooth Binet coefficient tails decrease",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "Binet_epsilon": "1/26460",
+        "log": "1/5",
+        "one_over_120y4": "1/30",
+        "one_over_12y2": "1/3",
+        "one_over_2y": "1/2"
+      },
+      "name": "smooth Binet fifth-order tail",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "ratio_bounds": [
+          "1/210",
+          "2/105",
+          "3/70"
+        ]
+      },
+      "name": "D geometric tails contract at n=105",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "contracted": "135955995/1476924416",
+        "first_omitted": [
+          "1/128",
+          "5/128",
+          "87/2048"
+        ]
+      },
+      "name": "full D rational tail after h^4",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "lower_bound_for_(D-1)/h": "42083399/338688000"
+      },
+      "name": "D stays above one",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "upper_bound_for_D-1": "169596601/35562240000"
+      },
+      "name": "log(D) power series is inside its disk",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "coefficient_of_n^-4": "81018406412711053846348580069822769807120937550591111/2968881210922904359686766578023725447249920000000000000"
+      },
+      "name": "smooth E1 envelope",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "worst_successive_ratio": "3/70"
+      },
+      "name": "alternating Binet coefficient tails decrease",
+      "passed": true
+    },
+    {
+      "evidence": "8168248307/194481000",
+      "name": "alternating gamma-ratio tail",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "ratio_bounds": [
+          "1/35",
+          "1/15"
+        ]
+      },
+      "name": "N geometric tails contract at n=105",
+      "passed": true
+    },
+    {
+      "evidence": "29711/29400",
+      "name": "N quadratic truncation stays above one",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "upper_bound_for_N_truncation": "47/2450"
+      },
+      "name": "N logarithm tail denominator is positive",
+      "passed": true
+    },
+    {
+      "evidence": "73799309/1270920",
+      "name": "N logarithm tail",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "ratio_bounds": [
+          "1/210",
+          "2/105",
+          "3/70"
+        ]
+      },
+      "name": "quadratic D tails contract at n=105",
+      "passed": true
+    },
+    {
+      "evidence": "141287/141120",
+      "name": "D quadratic truncation stays above one",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "upper_bound_for_D_truncation": "673/141120"
+      },
+      "name": "D logarithm tail denominator is positive",
+      "passed": true
+    },
+    {
+      "evidence": "85201444729993679/731811640985542656",
+      "name": "D logarithm tail for Q",
+      "passed": true
+    },
+    {
+      "evidence": "6114859355769224630395763507/61036109581213322873856000",
+      "name": "log(Q) tail",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "upper_bound_for_log_Q": "1021107214122858525695824883507/70656926353952072891847552000000"
+      },
+      "name": "Q exponential outer denominator is positive",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "upper_bound_for_quadratic_log_Q": "181/12600"
+      },
+      "name": "Q exponential inner denominator is positive",
+      "passed": true
+    },
+    {
+      "evidence": "257905663942313689081950587188973959346309/2490644845144912358054126301292012512960",
+      "name": "Q exponential tail",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "upper_bound_for_kappa_n^(-2x-1)_times_Q": "417820723296941503464601277806197218790886787/72657465019294155046008680580235782829946064000000"
+      },
+      "name": "alternating quadratic denominator is positive",
+      "passed": true
+    },
+    {
+      "evidence": "46183584446766805497267343228269898258787/597754762834778965932990312310083003110400",
+      "name": "alternating linear envelope",
+      "passed": true
+    },
+    {
+      "evidence": "174574156816379356420747678079236164342434843374496776847384471991414977490219041851183369/86862192032914129509123476140448829223220862249098740070278907933015339479310673940675430400",
+      "name": "alternating quadratic envelope",
+      "passed": true
+    },
+    {
+      "evidence": "346617686907988864/500063617986634845",
+      "name": "rational certificate log(2)>2/3",
+      "passed": true
+    },
+    {
+      "evidence": "45487133138885264248800413111425352402303561955515092605830227862315611781137/90236161378079055492936821702362378240420151255726196516591182602797527859200",
+      "name": "Euler integral certificate gamma>1/2",
+      "passed": true
+    },
+    {
+      "evidence": "31835489312497716263719188422718751745185868850424770075784485782391606916077118828285601/80703631234146009150640674488915901458926435043181089300894887674152500269360710733004800",
+      "name": "kappa decreases on the strip",
+      "passed": true
+    },
+    {
+      "evidence": "112539120546643725414359862911634653204112303893605859376679373456544107185437829561290401/80703631234146009150640674488915901458926435043181089300894887674152500269360710733004800",
+      "name": "2*kappa <= x/4 endpoint reduction",
+      "passed": true
+    },
+    {
+      "evidence": "1386470747631955456/1500190853959904535",
+      "name": "m=1 alternating envelope decreases",
+      "passed": true
+    },
+    {
+      "evidence": "1/16",
+      "name": "kappa endpoint is 1/16",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "negative_derivative_margin": "173308843453994432/500063617986634845"
+      },
+      "name": "psi(m,nu) decreases for m>=3",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "2*log(2)_lower": "693235373815977728/500063617986634845",
+        "integrand": "t^(-nu-1)*(1-nu*log(t))"
+      },
+      "name": "D_m(nu) decreases for m>=2",
+      "passed": true
+    },
+    {
+      "evidence": "135904/45045",
+      "name": "Gregory integral certificate pi>3",
+      "passed": true
+    },
+    {
+      "evidence": "7/5",
+      "name": "sqrt(2)>7/5",
+      "passed": true
+    },
+    {
+      "evidence": "15/16",
+      "name": "K_S Bernstein envelope",
+      "passed": true
+    },
+    {
+      "evidence": "24",
+      "name": "K_A Bernstein envelope",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "factor_offsets_from_n": [
+          "0",
+          "1",
+          "2",
+          "3"
+        ]
+      },
+      "name": "U_S quotient is a direct four-factor product",
+      "passed": true
+    },
+    {
+      "evidence": "log-Gamma convexity gives Gamma(x+1)<=1",
+      "name": "Gamma(x+1) endpoint chord",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "a": "2*x + 4",
+        "y": "beta_n - x + 1",
+        "y_plus_a": "beta_n + x + 5"
+      },
+      "name": "beta-integral parameter identity",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "a_range": [
+          "5",
+          "6"
+        ],
+        "lemma": "Gamma(y)/Gamma(y+a) <= (y-1)^(-a) for y>1 and a>0",
+        "y_minus_one_lower": 104
+      },
+      "name": "beta-integral hypotheses on the E1 range",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "5",
+        "6"
+      ],
+      "name": "beta-integral exponent range",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "(n/(n-x))^a_upper": "1340095640625/1265319018496"
+      },
+      "name": "beta-integral quotient factor",
+      "passed": true
+    },
+    {
+      "evidence": "375/14336",
+      "name": "symmetric coefficient remainder",
+      "passed": true
+    },
+    {
+      "evidence": "64/147",
+      "name": "alternating coefficient remainder",
+      "passed": true
+    },
+    {
+      "evidence": "72657046916297775654748482066156995819632521644413/72657465019294155046008680580235782829946064000000",
+      "name": "logarithm denominator floor",
+      "passed": true
+    },
+    {
+      "evidence": "2018262917202615417944685571673216189720724000000/72657046916297775654748482066156995819632521644413",
+      "name": "rho symmetric allocation",
+      "passed": true
+    },
+    {
+      "evidence": "32292206675241846687114969146771459035531584000000/72657046916297775654748482066156995819632521644413",
+      "name": "rho alternating allocation",
+      "passed": true
+    },
+    {
+      "evidence": "11878541009397321929554873875343653029509096210980050793926473705710227500819820075742227078909900612843/215710141430940414267195372456022031695816070392404464314555736739483318175707433286982696960000000000000",
+      "name": "E1 n^-4 budget",
+      "passed": true
+    },
+    {
+      "evidence": "22658383204482392293573360607372639572448478895911005290839521509407650240676628032266707031/43431095847726985300165392754155093383275663862072299675160662620226468933305511601782195200",
+      "name": "E1 n^(-2x-3) budget",
+      "passed": true
+    },
+    {
+      "evidence": "174574156816379356420747678079236164342434843374496776847384471991414977490219041851183369/86862192032914129509123476140448829223220862249098740070278907933015339479310673940675430400",
+      "name": "E1 n^(-4x-2) budget",
+      "passed": true
+    },
+    {
+      "evidence": "(4*x - 3)**2/8",
+      "name": "lower-strip a2 envelope derived from E1",
+      "passed": true
+    },
+    {
+      "evidence": "-(x - 2)*(2*x + 1)",
+      "name": "lower-strip b2 polynomial derived from E1",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "Bernstein_range": [
+          "1/48",
+          "1/24"
+        ]
+      },
+      "name": "lower-strip a3 term is strictly positive",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "8*kappa(1/2)/(1/2)": "1",
+        "D_1(2)": "3/4"
+      },
+      "name": "special beta(1) is derived at the endpoint",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "nodes": [
+          "(p + 1)*(q + 1)",
+          "p*q",
+          "p*(q + 1)",
+          "q*(p + 1)"
+        ]
+      },
+      "name": "adjacent-cell product identity",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "powers": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "name": "four-node differences factor as D_p D_q",
+      "passed": true
+    },
+    {
+      "evidence": [
+        {
+          "adverse": false,
+          "odd": 1,
+          "p": 0,
+          "q": 0
+        },
+        {
+          "adverse": true,
+          "odd": 1,
+          "p": 0,
+          "q": 1
+        },
+        {
+          "adverse": true,
+          "odd": 1,
+          "p": 1,
+          "q": 0
+        },
+        {
+          "adverse": false,
+          "odd": 1,
+          "p": 1,
+          "q": 1
+        }
+      ],
+      "name": "odd-node parity classification",
+      "passed": true
+    },
+    {
+      "evidence": "30*p**5 - 3317*p**4 - 6660*p**3 - 9841*p**2 - 6528*p - 1632",
+      "name": "even column polynomial derived",
+      "passed": true
+    },
+    {
+      "evidence": "256*p**4*(p + 1)**4",
+      "name": "even column clearing denominator derived",
+      "passed": true
+    },
+    {
+      "evidence": "256*p**4*(p + 1)**4",
+      "name": "even column denominator positive",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "constant": 2166364308,
+        "degree": 5
+      },
+      "name": "even column Taylor certificate at 113",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "at": 112,
+        "numerator": "-2714865504"
+      },
+      "name": "even column threshold is sharp",
+      "passed": true
+    },
+    {
+      "evidence": "64*p**6 + 94*p**5 - 3317*p**4 - 6660*p**3 - 9841*p**2 - 6528*p - 1632",
+      "name": "odd column polynomial derived",
+      "passed": true
+    },
+    {
+      "evidence": "256*p**4*(p + 1)**4",
+      "name": "odd column clearing denominator derived",
+      "passed": true
+    },
+    {
+      "evidence": "256*p**4*(p + 1)**4",
+      "name": "odd column denominator positive",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "constant": 2177376,
+        "degree": 6
+      },
+      "name": "odd column Taylor certificate at 8",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "at": 7,
+        "numerator": "-1668640"
+      },
+      "name": "odd column threshold is sharp",
+      "passed": true
+    },
+    {
+      "evidence": "2/(m*(m + 2))",
+      "name": "r_m decreases exactly",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "r2": "5/6",
+        "r3": "7/12"
+      },
+      "name": "r_2 and r_3 endpoints",
+      "passed": true
+    },
+    {
+      "evidence": "(2*m + 1)/(m*(m + 1))",
+      "name": "D_m(2)=r_m D_m(1)",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "D_m(3)": "(3*m**2 + 3*m + 1)/(m**3*(m + 1)**3)",
+        "shifted_numerator": "3*w**2 + 9*w + 7"
+      },
+      "name": "discarded a3 term has S3>0",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "difference": "(p*q - 3*p + 4*q)/(3*q*(p + 1))",
+        "shifted_numerator": "v*w + 6*v + 12"
+      },
+      "name": "adverse psi ratio envelope",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "product_floor": "4/9",
+        "single_factor_difference": "(p - 2)/(3*(p + 1))"
+      },
+      "name": "interior S1 product envelope",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "a-b": "p + q + 1",
+        "c-b": "p",
+        "d-b": "q"
+      },
+      "name": "all four interior nodes are at least pq",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "S1_product_floor": "4/9",
+        "threshold_numerator": "54",
+        "two_times_three_E1_terms_times_four_nodes": "24"
+      },
+      "name": "interior threshold constant is derived",
+      "passed": true
+    },
+    {
+      "evidence": "589/13824",
+      "name": "interior adverse constant",
+      "passed": true
+    },
+    {
+      "evidence": "2231/6912",
+      "name": "interior favorable constant",
+      "passed": true
+    },
+    {
+      "evidence": "746496/589",
+      "name": "interior threshold pq>=36",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "E1_pq": 105,
+        "analytic_threshold": 36
+      },
+      "name": "E1 begins beyond the interior threshold",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "count": 260,
+        "split": {
+          "column_q_106_112": 4,
+          "column_q_le_104": 104,
+          "interior_pq_le_104": 152
+        }
+      },
+      "name": "finite residue has exactly 260 canonical cells",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "column_q_106_112": 4,
+        "column_q_le_104": 104,
+        "interior_pq_le_104": 152
+      },
+      "name": "finite residue split is complete",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "digest": "ac4c1123f340154fadf03cdfe3f85f92c66ee34edbb15dee02666ec89d7f15cc",
+        "failures": []
+      },
+      "name": "all 260 residue cells are coefficientwise positive after t=2",
+      "passed": true
+    },
+    {
+      "evidence": "x*(2*x**2 - 3*x - 1)/24",
+      "name": "mutation: altered E1 coefficient rejected",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "correct": "1/16",
+        "mutated": "-1/16"
+      },
+      "name": "mutation: dropped alternating correction rejected",
+      "passed": true
+    },
+    {
+      "evidence": "negative shifted constant",
+      "name": "mutation: bad column threshold certificate rejected",
+      "passed": true
+    },
+    {
+      "evidence": "negative shifted constant",
+      "name": "mutation: bad finite coefficient rejected",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "correct": 113,
+        "mutated": 112,
+        "mutated_constant": -2714865504
+      },
+      "name": "mutation: changed analytic threshold rejected",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "derived": "22658383204482392293573360607372639572448478895911005290839521509407650240676628032266707031/43431095847726985300165392754155093383275663862072299675160662620226468933305511601782195200",
+        "mutated_claim": "1/2"
+      },
+      "name": "mutation: tightened E1 envelope rejected",
+      "passed": true
+    }
+  ],
+  "lower_strip": {
+    "adjacent_minor_scope": "exact adjacent cells; the standard adjacent-minor reduction is external to this replay",
+    "analytic_column": {
+      "even": {
+        "denominator": "256*p**4*(p + 1)**4",
+        "numerator": "30*p**5 - 3317*p**4 - 6660*p**3 - 9841*p**2 - 6528*p - 1632",
+        "shifted_coefficients": [
+          2166364308,
+          5055391540,
+          176472881,
+          2324756,
+          13633,
+          30
+        ],
+        "threshold": 113
+      },
+      "odd": {
+        "denominator": "256*p**4*(p + 1)**4",
+        "numerator": "64*p**6 + 94*p**5 - 3317*p**4 - 6660*p**3 - 9841*p**2 - 6528*p - 1632",
+        "shifted_coefficients": [
+          2177376,
+          6272112,
+          2970031,
+          602716,
+          61883,
+          3166,
+          64
+        ],
+        "threshold": 8
+      }
+    },
+    "finite_residue": {
+      "aggregate_sha256": "ac4c1123f340154fadf03cdfe3f85f92c66ee34edbb15dee02666ec89d7f15cc",
+      "cell_count": 260,
+      "maximum_degree": 338,
+      "minimum_degree": 5,
+      "split": {
+        "column_q_106_112": 4,
+        "column_q_le_104": 104,
+        "interior_pq_le_104": 152
+      }
+    },
+    "interior": {
+      "E1_pq_threshold": 105,
+      "analytic_pq_threshold": 36,
+      "c_adverse": "589/13824",
+      "c_favorable": "2231/6912"
+    },
+    "range": "1/2 <= x <= 1"
+  },
+  "mutation_controls": {
+    "altered_e1_coefficient": true,
+    "changed_analytic_threshold": true,
+    "dropped_alternating_linear_correction": true,
+    "negative_column_shift_coefficient": true,
+    "negative_finite_shift_coefficient": true,
+    "tightened_e1_envelope": true
+  },
+  "passed": true,
+  "schema": "lower-strip-e1-v1",
+  "source_sha256": "3c2dbd5481831bca7b83bf4b4558f55e2fba5b096fdb9b0ee2a339693caeca49"
+}
