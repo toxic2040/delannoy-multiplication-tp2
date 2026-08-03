@@ -19,13 +19,14 @@
     "orbit_even_to_odd": true,
     "orbit_odd_to_even": true,
     "trap_residual": true,
+    "truncated_bernstein_degree_rejected": true,
     "upper_pair": true,
     "upper_single_derivative": true,
     "upper_single_factorization": true,
     "upper_single_maximum_value": true
   },
   "passed": true,
-  "producer_sha256": "5e962ea4d27c0da4cf3016524044dca050566f11dbec7759ae52b8ecad7638d4",
+  "producer_sha256": "47ab7fbfe08752c9ebb88456364acb6f7817827475d61cda91e50e3c60468620",
   "schema": "dimension-step-compact-v1",
   "strip_3_4": {
     "center_derivatives": {

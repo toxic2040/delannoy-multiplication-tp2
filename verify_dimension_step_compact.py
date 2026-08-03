@@ -8,7 +8,6 @@ import hashlib
 import json
 from fractions import Fraction
 from pathlib import Path
-from typing import Iterable
 
 import sympy as sp
 
@@ -66,6 +65,13 @@ def vector_record(values: list[sp.Expr], labels: list[str]) -> dict[str, object]
 
 def bernstein_coefficients(expression: sp.Expr, variable: sp.Symbol, degree: int) -> list[sp.Expr]:
     poly = sp.Poly(sp.expand(expression), variable, domain="EX")
+    if degree < 0:
+        raise ValueError("Bernstein degree must be nonnegative")
+    actual_degree = -1 if poly.is_zero else int(poly.degree())
+    if actual_degree > degree:
+        raise ValueError(
+            f"polynomial degree {actual_degree} exceeds Bernstein degree {degree}"
+        )
     power = [poly.coeff_monomial(variable**k) for k in range(degree + 1)]
     return [
         sp.factor(sum(
@@ -169,6 +175,13 @@ def main() -> None:
     C, n, d, z, u, s = sp.symbols("C n d z u s")
     E = defect_factor(n, C, d)
     H = pair_factor(n, C, d)
+
+    try:
+        bernstein_coefficients(1 - z**2, z, 1)
+    except ValueError:
+        truncated_bernstein_degree_rejected = True
+    else:
+        truncated_bernstein_degree_rejected = False
 
     derivative_numerator = sp.together(sp.diff(H, d)).as_numer_denom()[0]
     derivative_core = sp.cancel(derivative_numerator / (4 * n * (C - 2) * (n + 2)))
@@ -358,6 +371,7 @@ def main() -> None:
         *endpoint_parity_records.values(),
     ]
     identities = {
+        "truncated_bernstein_degree_rejected": truncated_bernstein_degree_rejected,
         **kernel_identities,
         **{f"upper_single_{name}": value for name, value in upper_single_identity.items()},
         "trap_residual": sp.factor(trap_residual - trap_residual_expected) == 0,

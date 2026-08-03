@@ -27,6 +27,8 @@ from fractions import Fraction as Fr
 from math import comb
 from pathlib import Path
 
+import sympy as sp
+
 HERE = Path(__file__).resolve().parent
 DEFAULT_OUTPUT = HERE / "results" / "upper_strip_certificate.json"
 
@@ -103,8 +105,11 @@ def peval(a, v0, x0):
 def shift_v(a, k):
     r = {}
     for (i, j), c in a.items():
-        for l in range(i + 1):
-            r[(l, j)] = r.get((l, j), Fr(0)) + c * comb(i, l) * Fr(k) ** (i - l)
+        for shifted_degree in range(i + 1):
+            r[(shifted_degree, j)] = (
+                r.get((shifted_degree, j), Fr(0))
+                + c * comb(i, shifted_degree) * Fr(k) ** (i - shifted_degree)
+            )
     return {k2: v for k2, v in r.items() if v != 0}
 
 
@@ -135,17 +140,22 @@ def bernstein_box(poly, vhi, x0=Fr(1), x1=Fr(3, 2)):
         for j in range(dx + 1):
             c = M[i][j]
             if c:
-                for l in range(j + 1):
-                    R[i][l] += c * comb(j, l) * xs ** (j - l) * xc ** l
+                for shifted_degree in range(j + 1):
+                    R[i][shifted_degree] += (
+                        c
+                        * comb(j, shifted_degree)
+                        * xs ** (j - shifted_degree)
+                        * xc ** shifted_degree
+                    )
     for i in range(dv + 1):
         s = Fr(vhi) ** i
-        for l in range(dx + 1):
-            R[i][l] *= s
+        for shifted_degree in range(dx + 1):
+            R[i][shifted_degree] *= s
     S = [[Fr(0)] * (dx + 1) for _ in range(dv + 1)]
-    for l in range(dx + 1):
-        col = _bern1d([R[i][l] for i in range(dv + 1)])
+    for shifted_degree in range(dx + 1):
+        col = _bern1d([R[i][shifted_degree] for i in range(dv + 1)])
         for i in range(dv + 1):
-            S[i][l] = col[i]
+            S[i][shifted_degree] = col[i]
     return [_bern1d(S[i]) for i in range(dv + 1)]
 
 
@@ -284,6 +294,45 @@ check("max U(w/(1+w),x) on box < 1", uhmax < 1, f"~{float(uhmax):.8f}")
 print("\nV6. assembly inputs")
 Nv = {(1, 0): Fr(1)}
 
+# The infinite-tail recurrence and its two-step form are load-bearing. Check
+# the algebra explicitly before applying the interval bounds below.
+n_sym, t_sym, rho_sym, phi_sym, phi_next_sym = sp.symbols(
+    "n_sym t_sym rho_sym phi_sym phi_next_sym", nonzero=True
+)
+s_sym = rho_sym - phi_sym
+m_sym = -(n_sym**2) / (rho_sym * phi_sym)
+defect_sym = phi_next_sym - t_sym - n_sym**2 / phi_sym
+s_next_sym = t_sym + n_sym**2 / rho_sym - phi_next_sym
+check(
+    "s recurrence follows exactly from rho_(n+1)=t+n^2/rho_n",
+    sp.factor(s_next_sym - (m_sym * s_sym - defect_sym)) == 0,
+)
+
+m0_sym, m1_sym, d0_sym, d1_sym, s0_sym = sp.symbols(
+    "m0_sym m1_sym d0_sym d1_sym s0_sym"
+)
+e_sym = d1_sym - d0_sym + (1 + m1_sym) * d0_sym
+two_step_sym = m1_sym * (m0_sym * s0_sym - d0_sym) - d1_sym
+check(
+    "two-step parity recurrence has E_n=D(n+1)-D(n)+(1+m_(n+1))D(n)",
+    sp.expand(two_step_sym - (m1_sym * m0_sym * s0_sym - e_sym)) == 0,
+)
+
+contraction_sym = sp.cancel(
+    (n_sym / (n_sym + 1)) ** 2
+    * ((n_sym + 1) / (n_sym + 2)) ** 2
+    - (n_sym / (n_sym + 2)) ** 2
+)
+check(
+    "two one-step multiplier bounds give the weighted parity contraction exactly",
+    contraction_sym == 0,
+)
+
+check(
+    "rho_m/phi(m)=1+s_m/phi(m) links the tail bound to A_n-G(n)",
+    sp.cancel(rho_sym / phi_sym - (1 + s_sym / phi_sym)) == 0,
+)
+
 # ---- (P2) sandwich, as exact polynomial positivity (no grid) -----------------
 # base n=1: rho_1 = 2x+1.  lower 1+x <= 2x+1 <=> x>=0.  upper 2x+1 <= 1+x+x^2 <=> x(x-1)>=0.
 base_up = psub(padd(padd(ONE, X), ppow(X, 2)), padd(pscal(2, X), ONE))     # x^2 - x
@@ -376,17 +425,40 @@ def tail_bound(c, n0):
     return c * (Fr(1) / a + Fr(2) / a ** 2 + Fr(4, 3) / a ** 3) / 2
 
 
+tail_variable = sp.symbols("tail_variable", positive=True)
+tail_integrand = (
+    tail_variable ** -2 + 4 * tail_variable ** -3 + 4 * tail_variable ** -4
+)
+tail_antiderivative = (
+    tail_variable ** -1
+    + 2 * tail_variable ** -2
+    + sp.Rational(4, 3) * tail_variable ** -3
+)
+tail_decrease_numerator = sp.factor(
+    -sp.diff(tail_integrand, tail_variable) * tail_variable**5
+)
+check(
+    "step-two tail majorant uses the exact integral of a decreasing summand",
+    sp.simplify(-sp.diff(tail_antiderivative, tail_variable) - tail_integrand) == 0
+    and sp.Poly(tail_decrease_numerator, tail_variable).all_coeffs()
+    == [2, 12, 16],
+)
+
+
 t_coarse = tail_bound(Fr(1169, 100), 100)
 check("parity-chain tail sum_{j>=100,step 2}(j+2)^2|E_j| <= 0.0620", t_coarse <= Fr(62, 1000),
       f"{t_coarse} ~ {float(t_coarse):.6f}")
 S_coarse = Fr(1, 50) + Fr(62, 1000)
 check("S = sup_{m>=100} m^2|s_m| <= 1/50 + 0.0620 = 0.082", S_coarse <= Fr(82, 1000))
 errfac = Fr(4) / (1 - Fr(82, 1000) / 10 ** 6)
-check("|A_n - G(n)| <= 4.01 S/n^2 for n >= 100", errfac <= Fr(401, 100),
+check("|A_n - G(n)| <= 4.01 S/n^2 for n >= 100",
+      errfac == Fr(4) / (1 - S_coarse / 100**3) and errfac <= Fr(401, 100),
       f"exact factor {float(errfac):.8f}")
 weight_surplus = psub(pscal(2, ppow(padd(Nv, ONE), 3)), pmul(padd(pscal(2, Nv), ONE), ppow(Nv, 2)))
+second_weight_surplus = psub(pscal(2, Nv), padd(pscal(2, Nv), pscal(-1, ONE)))
 check("(2n+1)n^2 <= 2(n+1)^3 for all n >= 1 (cleared: 0 <= 5n^2+6n+2)",
-      weight_surplus == {(2, 0): Fr(5), (1, 0): Fr(6), (0, 0): Fr(2)})
+      weight_surplus == {(2, 0): Fr(5), (1, 0): Fr(6), (0, 0): Fr(2)}
+      and second_weight_surplus == ONE)
 
 # continuum certificates, rebuilt from scratch
 print("       continuum certificates n0^2|s_{n0}(t)| <= 1/50 on t in [3,4]:")
@@ -521,7 +593,7 @@ for n in range(2, NBRIDGE + 1):
 EXPECT = 21777
 check(f"deg N_n = 3n-1 and leading coefficient 2, all n <= {NBRIDGE}", degok and leadok)
 check(f"all {tot} coefficients of N_n(3+u) strictly positive, 2 <= n <= {NBRIDGE}",
-      nonpos == 0, f"count {tot}" + (f" (expected 21777)" if EXPECT else ""))
+      nonpos == 0, f"count {tot}" + (" (expected 21777)" if EXPECT else ""))
 check("finite coefficient count is exactly 21,777", tot == EXPECT)
 badA = 0
 for n in range(2, 41):
@@ -603,7 +675,7 @@ check("margin is monotone favourable in n (x n/(n+1) up, c6/n down)",
       monotone_differences and c6 > 0)
 
 print("\n" + "=" * 74)
-expected_gate_count = 50
+expected_gate_count = 55
 if NCHECK != expected_gate_count:
     FAILS.append(f"gate count {NCHECK}, expected {expected_gate_count}")
 if FAILS:

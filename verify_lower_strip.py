@@ -2,9 +2,11 @@
 """Exact replay for the lower-strip argument and its E1 input.
 
 The replay derives the asymptotic coefficients from the displayed Darboux
-formulas, proves the uniform remainder budgets with rational interval and
-Bernstein bounds, checks the two analytic column tails, and reconstructs every
-cell in the finite residue.  It deliberately has no reduced or quick mode.
+formulas, replays the stated remainder budgets from named analytic inputs with
+rational interval and Bernstein bounds, checks the two analytic column tails,
+and reconstructs every cell in the finite residue.  It deliberately has no
+reduced or quick mode.  The analytic Binet and beta-integral lemmas themselves
+remain arguments in the manuscript rather than formalized routines here.
 """
 
 from __future__ import annotations
@@ -28,6 +30,11 @@ ROOT = Path(__file__).resolve().parent
 DEFAULT_OUTPUT = ROOT / "results" / "lower_strip_certificate.json"
 
 x, h = sp.symbols("x h")
+E1_ENVELOPE_NAMES = (
+    "smooth_n^-4",
+    "alternating_n^(-2x-3)",
+    "quadratic_n^(-4x-2)",
+)
 
 
 class GateBook:
@@ -74,6 +81,22 @@ def json_value(value: Any) -> Any:
     if isinstance(value, (list, tuple)):
         return [json_value(v) for v in value]
     return value
+
+
+def e1_envelope_values(envelopes: dict[str, Any]) -> tuple[F, ...]:
+    """Return the three load-bearing E1 envelopes in theorem order."""
+
+    return tuple(as_fraction(sp.sympify(envelopes[name])) for name in E1_ENVELOPE_NAMES)
+
+
+def valid_e1_remainder_budget(envelopes: dict[str, Any]) -> bool:
+    """Each E1 remainder component must be present and strictly between zero and one."""
+
+    try:
+        values = e1_envelope_values(envelopes)
+    except (KeyError, TypeError, ValueError):
+        return False
+    return len(values) == 3 and all(F(0) < value < F(1) for value in values)
 
 
 def bernstein_coefficients(poly: Any, variable: sp.Symbol = x) -> list[F]:
@@ -559,6 +582,20 @@ def derive_e1(book: GateBook) -> dict[str, Any]:
     final_symmetric = smooth_n4 + rho_symmetric
     final_alternating = omitted_alt_linear + rho_alternating
     final_quadratic = alternating_square
+    book.check(
+        "E1 final envelopes are assembled from their derived components",
+        final_symmetric == smooth_n4 + rho_symmetric
+        and final_alternating == omitted_alt_linear + rho_alternating
+        and final_quadratic == alternating_square
+        and final_symmetric > smooth_n4
+        and final_alternating > omitted_alt_linear
+        and final_quadratic > 0,
+        {
+            "symmetric": [smooth_n4, rho_symmetric, final_symmetric],
+            "alternating": [omitted_alt_linear, rho_alternating, final_alternating],
+            "quadratic": final_quadratic,
+        },
+    )
     book.check("E1 n^-4 budget", final_symmetric < 1, final_symmetric)
     book.check("E1 n^(-2x-3) budget", final_alternating < 1, final_alternating)
     book.check("E1 n^(-4x-2) budget", final_quadratic < 1, final_quadratic)
@@ -963,7 +1000,18 @@ def derive_lower_strip(
     )
     c_adverse = F(1, 2) - F(1, 3) - mixed_coefficient * ratio_2 * ratio_3
     c_favorable = F(1, 2) - mixed_coefficient * ratio_2**2
-    two_remainder_coefficient = F(2) * F(3) * F(4)
+    envelope_values = e1_envelope_values(e1["envelopes"])
+    envelope_budget_valid = valid_e1_remainder_budget(e1["envelopes"])
+    e1_remainder_coefficient = F(len(envelope_values))
+    book.check(
+        "lower-strip remainder coefficient derives from three positive E1 envelopes",
+        envelope_budget_valid and e1_remainder_coefficient == 3,
+        {
+            "envelopes": dict(zip(E1_ENVELOPE_NAMES, envelope_values)),
+            "coefficient": e1_remainder_coefficient,
+        },
+    )
+    two_remainder_coefficient = F(2) * e1_remainder_coefficient * F(4)
     s1_product_floor = F(4, 9)
     threshold_numerator = two_remainder_coefficient / s1_product_floor
     threshold_square = threshold_numerator / c_adverse
@@ -1023,7 +1071,7 @@ def derive_lower_strip(
         {"failures": failed_cells, "digest": aggregate.hexdigest()},
     )
 
-    # Six independent mutations must be rejected by the same local predicates.
+    # Independent mutations must be rejected by the same local predicates.
     coefficient_mutation = sp.factor(a2 + x / 24)
     coefficient_rejected = sp.simplify(coefficient_mutation - expected_a2()) != 0
 
@@ -1094,6 +1142,11 @@ def derive_lower_strip(
     threshold_rejected = not positive_shift_certificate(mutated_threshold_coefficients)
     alternating_envelope = as_fraction(e1["envelopes"]["alternating_n^(-2x-3)"])
     envelope_rejected = alternating_envelope < 1 and not alternating_envelope < F(1, 2)
+    zeroed_envelopes = dict(e1["envelopes"])
+    zeroed_envelopes["smooth_n^-4"] = F(0)
+    zeroed_symmetric_rejected = envelope_budget_valid and not valid_e1_remainder_budget(
+        zeroed_envelopes
+    )
     book.check(
         "mutation: altered E1 coefficient rejected",
         coefficient_rejected,
@@ -1128,6 +1181,11 @@ def derive_lower_strip(
         envelope_rejected,
         {"derived": alternating_envelope, "mutated_claim": F(1, 2)},
     )
+    book.check(
+        "mutation: zeroed symmetric E1 envelope rejected",
+        zeroed_symmetric_rejected,
+        {"derived": envelope_values[0], "mutated": F(0)},
+    )
 
     lower = {
         "range": "1/2 <= x <= 1",
@@ -1154,6 +1212,7 @@ def derive_lower_strip(
         "negative_finite_shift_coefficient": finite_rejected,
         "changed_analytic_threshold": threshold_rejected,
         "tightened_e1_envelope": envelope_rejected,
+        "zeroed_symmetric_e1_envelope": zeroed_symmetric_rejected,
     }
     return lower, mutations
 
@@ -1220,11 +1279,11 @@ def main() -> int:
     body["body_sha256"] = hashlib.sha256(canonical_body).hexdigest()
     atomic_json(output, body)
     print(f"PASS {len(book.gates)}/{len(book.gates)} exact gates")
-    print("PASS E1 envelopes derived from formulas (7)-(9)")
+    print("PASS E1 envelopes assembled from formulas (7)-(9) and named analytic inputs")
     print(
         "PASS lower strip: 2 analytic columns, interior pq>=36, 260/260 residue cells"
     )
-    print("PASS 6/6 mutation controls rejected")
+    print(f"PASS {sum(mutations.values())}/{len(mutations)} mutation controls rejected")
     print(f"WROTE {output}")
     return 0
 

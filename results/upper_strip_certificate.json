@@ -11,7 +11,7 @@
     "n_min": 2,
     "positive_shifted_coefficients": 21777
   },
-  "gate_count": 50,
+  "gate_count": 55,
   "p7_bernstein": {
     "box": "[0,1/100] x [1,3/2]",
     "coefficient_count": 540,

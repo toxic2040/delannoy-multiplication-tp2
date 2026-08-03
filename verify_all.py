@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run the complete Delannoy theorem replay with fail-closed release checks."""
+"""Run the complete Delannoy manuscript replay with fail-closed release checks."""
 
 from __future__ import annotations
 
@@ -16,6 +16,7 @@ import tempfile
 HERE = Path(__file__).resolve().parent
 MANIFEST = HERE / "SHA256SUMS"
 COMPONENT_TIMEOUT_SECONDS = 900
+CLASSIFICATION = "REPRODUCIBLE_MANUSCRIPT_REPLAY"
 COMPONENTS = (
     ("structural identities", "verify_structural.py", None),
     (
@@ -53,6 +54,7 @@ EXPECTED_MANIFEST_PATHS = tuple(
             "LICENSE",
             "LICENSE-CC-BY-4.0",
             "README.md",
+            "VERIFICATION_SCOPE.md",
             "requirements.txt",
             "verify_all.py",
             *(script for _, script, _ in COMPONENTS),
@@ -287,6 +289,7 @@ def run_component(
 
 
 def main() -> int:
+    print(f"classification={CLASSIFICATION}")
     manifest_text, failures = preflight()
     if failures:
         print("VERIFY_ALL: PREFLIGHT FAILED")
@@ -344,7 +347,8 @@ def main() -> int:
     print(
         "\nVERIFY_ALL: PASS "
         f"({len(COMPONENTS)} full components, {len(CERTIFICATE_SCHEMAS)} byte-stable "
-        f"certificates, {1 + certificate_mutations_rejected} rejected release mutations)"
+        f"certificates, {1 + certificate_mutations_rejected} rejected release mutations; "
+        f"{CLASSIFICATION})"
     )
     return 0
 

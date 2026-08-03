@@ -2,7 +2,7 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21778524.svg)](https://doi.org/10.5281/zenodo.21778524)
 
-Exact verification code for the sharp half-line theorem:
+Deterministic exact-arithmetic replay accompanying the sharp half-line theorem:
 
     T(x,n) = sum_j 2^j C(x,j) C(n,j),
 
@@ -20,31 +20,42 @@ not the classical total-positivity statement for the additive Delannoy array.
 
 ## Verification
 
-The suite is fail-closed and uses paths relative to the checkout:
+The authoritative runner is fail-closed for the release manifest and for every
+implemented gate. It uses paths relative to the checkout:
 
-    python3.14 -I -B verify_all.py
+    python3 -I -B verify_all.py
 
 Its components reconstruct:
 
-- the defining recurrence, threshold witnesses, margin identities, and
+- the defining recurrence, the first-cell threshold witnesses, margin identities, and
   grounded-path determinant formulas;
 - the compact and unbounded parts of the universal dimension step;
-- the uniform two-cut expansion and its exact lower-strip remainder bounds;
+- the displayed two-cut expansion and the exact arithmetic assembled from its
+  named analytic remainder inputs;
 - the two analytic lower-strip gates and all 260 canonical finite-residue
   certificates, up to p-q symmetry; and
-- the upper-strip finite coefficients and Bernstein certificates.
+- the upper-strip finite coefficients, Bernstein certificates, and exact
+  two-step tail-assembly identities.
 
-All sign decisions use exact integer, rational, or symbolic polynomial
-arithmetic. Finite computations prove only their enumerated ranges; the
-all-parameter branches are separately reconstructed. Embedded mutation
-controls must be rejected for the suite to pass.
+All implemented sign decisions use exact integer, rational, or symbolic
+polynomial arithmetic. Finite computations prove only their enumerated ranges.
+Embedded mutation controls must be rejected for the suite to pass, but they
+cover named failure modes rather than every possible source mutation.
+
+The repository is best described as a `REPRODUCIBLE_MANUSCRIPT_REPLAY`. It is
+not a proof-assistant development or a self-contained full-theorem
+certificate. In particular, the Darboux necessity argument for `0 < x < 1/2`
+and the analytic Binet, beta-integral, and related remainder lemmas are proofs
+in the paper; the scripts reconstruct their algebraic consequences and finite
+certificates. The detailed branch-by-branch boundary is in
+[VERIFICATION_SCOPE.md](VERIFICATION_SCOPE.md).
 
 The reference environment is CPython 3.14.5 with SymPy 1.14.0, pinned in
 `requirements.txt`. The scripts also
 run on supported GIL builds because this release does not use a CPU-bound
 parallel sweep.
 
-The authoritative runner has no quick mode. It validates the sorted release
+The runner has no quick mode. It validates the sorted release
 manifest, gives every component a 900-second timeout, rebuilds each certificate
 in a temporary directory, and requires byte-for-byte agreement with the banked
 record. Missing files, dependencies, exceptions, skipped outputs, hash changes,
@@ -52,7 +63,7 @@ or certificate failures produce a nonzero exit.
 
 ## Scope
 
-This repository contains verification code and deterministic certificates.
+This repository contains replay code and deterministic certificates.
 The paper's PDF and source are archived with this suite in the versioned Zenodo
 record [doi:10.5281/zenodo.21778524](https://doi.org/10.5281/zenodo.21778524).
 
