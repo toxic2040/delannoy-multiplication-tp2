@@ -24,7 +24,10 @@ prod_{n in L} Q_n(1+y) - prod_{n in R} Q_n(1+y)
 The current all-index boundary is:
 
 - `delta_1 > 0` is proved universally;
-- the sign `delta_k > 0` is open for every fixed `k >= 2`; and
+- `delta_2 > 0` is proved universally on this domain, as the same-parity
+  case of the sharp signed law `sgn delta_2 = (-1)^(p+q)` for all
+  `p >= 1`, `q >= 2`;
+- the sign `delta_k > 0` is open for every fixed `k >= 3`; and
 - the stronger raw stochastic dominance statement is open.  Equivalently, it
   is not known whether every coefficient of
 
