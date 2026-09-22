@@ -37,6 +37,14 @@ The current all-index boundary is:
 
   is positive throughout the same-parity domain.
 
+Partial progress since v2.0, not part of that release or its runner, with
+one independent review of the certificate: let `D = 2pq+3p+q+1`, the common
+degree of the two products in `y`.  For every `p >= 1`, `q >= 2`, of either
+parity, the seven highest coefficients `delta_D, ..., delta_(D-6)` are
+strictly positive, by an exact polynomial certificate built on the factorial
+ratio of the leading coefficients of the two sides.  The fixed-`k` questions
+above count from the bottom and are unchanged.
+
 The unique odd row on each side has been eliminated exactly.  With
 `E_m(y)=Q_(2m)(1+y)`, `O_m(y)=Q_(2m+1)(1+y)`,
 `b_j=C(2j,j)/4^j`, and `c_m=1/((2m+1)b_m)`,
