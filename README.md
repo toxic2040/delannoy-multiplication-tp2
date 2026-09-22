@@ -77,6 +77,12 @@ table: the sharp half-line threshold*, version 2.0, 2026.
 
 Machine-readable citation metadata is in `CITATION.cff`.
 
+The other records in the same four-paper program:
+
+- *green-path-dpp: Exact rational determinantal algorithms for grounded paths*, [doi:10.5281/zenodo.21778518](https://doi.org/10.5281/zenodo.21778518)
+- *Odd cycles, sech spectra, and a square-tail inequality*, [doi:10.5281/zenodo.21853982](https://doi.org/10.5281/zenodo.21853982)
+- *The sharp constant in the shift-wall bridge for odd-cycle polynomials*, [doi:10.5281/zenodo.21866366](https://doi.org/10.5281/zenodo.21866366)
+
 ## License
 
 Verification code is MIT licensed. Documentation and certificate records are
